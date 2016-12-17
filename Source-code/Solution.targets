@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"/>
+	<PropertyGroup>
+		<Solution>Emi.UserControls</Solution>
+	</PropertyGroup>
+	<PropertyGroup>
+		<AllowedReferenceRelatedFileExtensions>.pdb</AllowedReferenceRelatedFileExtensions>
+		<AssemblyName>$(Solution).$(SolutionProject)</AssemblyName>
+		<CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+		<DocumentationFile>Documentation.xml</DocumentationFile>
+		<ErrorReport>prompt</ErrorReport>
+		<IntermediateOutputPath>Build\$(Configuration)\!\</IntermediateOutputPath>
+		<OutputPath>Build\$(Configuration)\</OutputPath>
+		<RootNamespace>$(Solution)</RootNamespace>
+		<SignAssembly>true</SignAssembly>
+		<TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+		<UICulture>en</UICulture>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<Optimize>false</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+		<DebugSymbols>false</DebugSymbols>
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+</Project>

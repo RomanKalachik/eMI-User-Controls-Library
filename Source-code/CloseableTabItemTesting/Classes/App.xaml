@@ -1,0 +1,1 @@
+﻿<Application ShutdownMode="OnMainWindowClose" StartupUri="MainWindow.xaml" x:Class="Emi.UserControls.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"/>

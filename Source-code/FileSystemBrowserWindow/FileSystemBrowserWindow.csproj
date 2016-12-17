@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<SolutionProject>FileSystemBrowserWindow</SolutionProject>
+	</PropertyGroup>
+	<Import Project="..\Solution.targets"/>
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<ProjectGuid>{8FFCD607-FC0C-48AA-B9E1-11C6DEEAE150}</ProjectGuid>
+		<ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="PresentationCore"/>
+		<Reference Include="PresentationFramework"/>
+		<Reference Include="System"/>
+		<Reference Include="System.Xaml"/>
+		<Reference Include="System.Windows"/>
+		<Reference Include="WindowsBase"/>
+	</ItemGroup>
+	<ItemGroup>
+		<CodeAnalysisDictionary Include="..\Solution Items\CodeAnalysisDictionary.xml">
+			<Link>Properties\CodeAnalysisDictionary.xml</Link>
+		</CodeAnalysisDictionary>
+		<Compile Include="..\Solution Items\GlobalAssemblyInfo.cs">
+			<Link>Properties\GlobalAssemblyInfo.cs</Link>
+		</Compile>
+		<Compile Include="Properties\AssemblyInfo.cs"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="Enumerations\BrowsingMode.cs"/>
+		<Compile Include="Enumerations\ByteMultiple.cs"/>
+		<Compile Include="Enumerations\FilteringMode.cs"/>
+		<Compile Include="Classes\BrowserFilter.cs"/>
+		<Compile Include="Classes\BrowserSettings.cs"/>
+		<Compile Include="Classes\ErrorWindow.xaml.cs">
+			<DependentUpon>ErrorWindow.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Classes\FileSystemBrowserWindow\Enumerations\FileSystemItemType.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\Classes\ByteConverter.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\Classes\ComputerItem.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\Classes\FileSystemItem.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\Classes\PathButton.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\FileSystemBrowserWindow.xaml.cs">
+			<DependentUpon>FileSystemBrowserWindow.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Classes\FileSystemBrowserWindow\Methods\ActionButton_Click.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\Methods\ComputerListView_MouseDoubleClick.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\Methods\FileSystemListView_MouseDoubleClick.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\Methods\FileSystemListView_SelectionChanged.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\Methods\GeneratePath.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\Methods\ListComputer.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\Methods\ListFileSystem.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\Methods\Navigate.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\Methods\PathButton_Click.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\Properties\SelectedDirectories.cs"/>
+		<Compile Include="Classes\FileSystemBrowserWindow\Properties\SelectedFiles.cs"/>
+		<Compile Include="Classes\MinimumGreaterThanMaximumException.cs"/>
+		<Compile Include="GlobalSuppressions.cs"/>
+		<Compile Include="Resources\Buttons.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Buttons.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<Compile Include="Resources\ComputerGridViewColumns.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ComputerGridViewColumns.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<Compile Include="Resources\DriveTypeEnumerations.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>DriveTypeEnumerations.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<Compile Include="Resources\Exceptions.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Exceptions.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<Compile Include="Resources\FileSystemGridViewColumns.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>FileSystemGridViewColumns.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<Compile Include="Resources\NavigationButtons.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>NavigationButtons.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<Compile Include="Resources\PathButton.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>PathButton.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<Compile Include="Resources\Titles.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Titles.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<EmbeddedResource Include="Images\File.png"/>
+		<EmbeddedResource Include="Images\Folder.png"/>
+		<EmbeddedResource Include="Resources\Buttons.en.resx"/>
+		<EmbeddedResource Include="Resources\Buttons.es.resx"/>
+		<EmbeddedResource Include="Resources\Buttons.is.resx"/>
+		<EmbeddedResource Include="Resources\Buttons.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Buttons.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Resources\ComputerGridViewColumns.en.resx"/>
+		<EmbeddedResource Include="Resources\ComputerGridViewColumns.es.resx"/>
+		<EmbeddedResource Include="Resources\ComputerGridViewColumns.is.resx"/>
+		<EmbeddedResource Include="Resources\ComputerGridViewColumns.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>ComputerGridViewColumns.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Resources\DriveTypeEnumerations.en.resx"/>
+		<EmbeddedResource Include="Resources\DriveTypeEnumerations.es.resx"/>
+		<EmbeddedResource Include="Resources\DriveTypeEnumerations.is.resx"/>
+		<EmbeddedResource Include="Resources\DriveTypeEnumerations.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>DriveTypeEnumerations.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Resources\Exceptions.en-GB.resx"/>
+		<EmbeddedResource Include="Resources\Exceptions.en-US.resx"/>
+		<EmbeddedResource Include="Resources\Exceptions.en.resx"/>
+		<EmbeddedResource Include="Resources\Exceptions.es.resx"/>
+		<EmbeddedResource Include="Resources\Exceptions.is.resx"/>
+		<EmbeddedResource Include="Resources\Exceptions.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Exceptions.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Resources\FileSystemGridViewColumns.en.resx"/>
+		<EmbeddedResource Include="Resources\FileSystemGridViewColumns.es.resx"/>
+		<EmbeddedResource Include="Resources\FileSystemGridViewColumns.is.resx"/>
+		<EmbeddedResource Include="Resources\FileSystemGridViewColumns.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>FileSystemGridViewColumns.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Resources\NavigationButtons.en.resx"/>
+		<EmbeddedResource Include="Resources\NavigationButtons.es.resx"/>
+		<EmbeddedResource Include="Resources\NavigationButtons.is.resx"/>
+		<EmbeddedResource Include="Resources\NavigationButtons.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>NavigationButtons.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Resources\PathButton.en.resx"/>
+		<EmbeddedResource Include="Resources\PathButton.es-CL.resx"/>
+		<EmbeddedResource Include="Resources\PathButton.es-ES.resx"/>
+		<EmbeddedResource Include="Resources\PathButton.es.resx"/>
+		<EmbeddedResource Include="Resources\PathButton.is.resx"/>
+		<EmbeddedResource Include="Resources\PathButton.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>PathButton.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Resources\Titles.en.resx"/>
+		<EmbeddedResource Include="Resources\Titles.es.resx"/>
+		<EmbeddedResource Include="Resources\Titles.is.resx"/>
+		<EmbeddedResource Include="Resources\Titles.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Titles.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<Page Include="Classes\ErrorWindow.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Include="Classes\FileSystemBrowserWindow\FileSystemBrowserWindow.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+	</ItemGroup>
+	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+</Project>

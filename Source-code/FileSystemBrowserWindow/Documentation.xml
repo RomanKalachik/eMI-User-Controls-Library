@@ -1,0 +1,912 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Emi.UserControls.FileSystemBrowserWindow</name>
+    </assembly>
+    <members>
+        <member name="T:Emi.UserControls.BrowsingMode">
+            <summary>The type of browsing to perform by the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+        </member>
+        <member name="F:Emi.UserControls.BrowsingMode.Open">
+            <summary>Represents visually that the intension is to open the result of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+        </member>
+        <member name="F:Emi.UserControls.BrowsingMode.Select">
+            <summary>Represents visually that the intension is to select the result of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+        </member>
+        <member name="T:Emi.UserControls.ByteMultiple">
+            <summary>The byte multiple of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.ByteConverter"/> class.</summary>
+        </member>
+        <member name="F:Emi.UserControls.ByteMultiple.Binary">
+            <summary>Represents that the byte multiple is binary (1024).</summary>
+        </member>
+        <member name="F:Emi.UserControls.ByteMultiple.Decimal">
+            <summary>Represents that the byte multiple is decimal (1000).</summary>
+        </member>
+        <member name="T:Emi.UserControls.FilteringMode">
+            <summary>The mode of filtering to perform on files by the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+        </member>
+        <member name="F:Emi.UserControls.FilteringMode.IncludeAll">
+            <summary>Represents that all files are included. Files can be filtered out.</summary>
+        </member>
+        <member name="F:Emi.UserControls.FilteringMode.ExcludeAll">
+            <summary>Represents that all files are excluded. Files can be filtered in.</summary>
+        </member>
+        <member name="T:Emi.UserControls.BrowserFilter">
+            <summary>Provides a file filter for the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+        </member>
+        <member name="F:Emi.UserControls.BrowserFilter.filteringMode">
+            <summary>The filtering mode of the browser filter.</summary>
+        </member>
+        <member name="F:Emi.UserControls.BrowserFilter.extensionsList">
+            <summary>The list of file name extensions to filter in or out.</summary>
+        </member>
+        <member name="M:Emi.UserControls.BrowserFilter.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.BrowserFilter"/> class.</summary>
+        </member>
+        <member name="M:Emi.UserControls.BrowserFilter.#ctor(Emi.UserControls.FilteringMode)">
+            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.BrowserFilter"/> class.</summary>
+            <param name="filteringMode">The filtering mode for the <see cref="F:Emi.UserControls.BrowserFilter.filteringMode"/> field.</param>
+        </member>
+        <member name="M:Emi.UserControls.BrowserFilter.AddExtension(System.String)">
+            <summary>Adds file name extension to filter in or out.</summary>
+            <param name="extension">The file name extension to add to the <see cref="F:Emi.UserControls.BrowserFilter.extensionsList"/> field.</param>
+        </member>
+        <member name="M:Emi.UserControls.BrowserFilter.Process(System.IO.FileSystemInfo)">
+            <summary>Processes a file by filtering it in or out.</summary>
+            <param name="fileSystemInfo">The file to process.</param>
+            <returns>An indication of whether the file should be filtered in or out.</returns>
+        </member>
+        <member name="T:Emi.UserControls.BrowserSettings">
+            <summary>Provides settings for the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+        </member>
+        <member name="F:Emi.UserControls.BrowserSettings.hasAvailableFreeSpace">
+            <summary>Indicates whether the computer list view has a column for the available free space.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.BrowserSettings.HasAvailableFreeSpace"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.BrowserSettings.hasDriveType">
+            <summary>Indicates whether the computer list view has a column for the drive type.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.BrowserSettings.HasDriveType"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.BrowserSettings.hasDriveFormat">
+            <summary>Indicates whether the computer list view has a column for the drive format.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.BrowserSettings.HasDriveFormat"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.BrowserSettings.hasRootDirectory">
+            <summary>Indicates whether the computer list view has a column for the root directory.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.BrowserSettings.HasRootDirectory"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.BrowserSettings.hasTotalFreeSpace">
+            <summary>Indicates whether the computer list view has a column for the total free space.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.BrowserSettings.HasTotalFreeSpace"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.BrowserSettings.hasTotalSize">
+            <summary>Indicates whether the computer list view has a column for the total size.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.BrowserSettings.HasTotalSize"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.BrowserSettings.hasVolumeLabel">
+            <summary>Indicates whether the computer list view has a column for the volume label.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.BrowserSettings.HasVolumeLabel"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.BrowserSettings.browsingMode">
+            <summary>The browsing mode of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.BrowserSettings.BrowsingMode"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.BrowserSettings.byteMultiple">
+            <summary>The byte multiple of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.ByteConverter"/> class.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.BrowserSettings.ByteMultiple"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.BrowserSettings.maximumDirectories">
+            <summary>The maximum number of directories to return by the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.BrowserSettings.MaximumDirectories"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.BrowserSettings.maximumFiles">
+            <summary>The maximum number of files to return by the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.BrowserSettings.MaximumFiles"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.BrowserSettings.minimumDirectories">
+            <summary>The minimum number of directories to return by the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.BrowserSettings.MinimumDirectories"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.BrowserSettings.minimumFiles">
+            <summary>The minimum number of files to return by the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.BrowserSettings.MinimumFiles"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.BrowserSettings.path">
+            <summary>The path of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.BrowserSettings.Path"/> property.</remarks>
+        </member>
+        <member name="P:Emi.UserControls.BrowserSettings.HasAvailableFreeSpace">
+            <summary>Gets or sets a value indicating whether the computer list view has a column for the available free space.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.BrowserSettings.hasAvailableFreeSpace"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.BrowserSettings.HasDriveType">
+            <summary>Gets or sets a value indicating whether the computer list view has a column for the drive type.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.BrowserSettings.hasDriveType"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.BrowserSettings.HasDriveFormat">
+            <summary>Gets or sets a value indicating whether the computer list view has a column for the drive format.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.BrowserSettings.hasDriveFormat"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.BrowserSettings.HasRootDirectory">
+            <summary>Gets or sets a value indicating whether the computer list view has a column for the root directory.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.BrowserSettings.hasRootDirectory"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.BrowserSettings.HasTotalFreeSpace">
+            <summary>Gets or sets a value indicating whether the computer list view has a column for the total free space.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.BrowserSettings.hasTotalFreeSpace"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.BrowserSettings.HasTotalSize">
+            <summary>Gets or sets a value indicating whether the computer list view has a column for the total size.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.BrowserSettings.hasTotalSize"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.BrowserSettings.HasVolumeLabel">
+            <summary>Gets or sets a value indicating whether the computer list view has a column for the volume label.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.BrowserSettings.hasVolumeLabel"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.BrowserSettings.BrowsingMode">
+            <summary>Gets or sets a value indicating the browsing mode of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.BrowserSettings.browsingMode"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.BrowserSettings.ByteMultiple">
+            <summary>Gets or sets a value indicating the byte multiple of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.ByteConverter"/> class.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.BrowserSettings.byteMultiple"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.BrowserSettings.MaximumDirectories">
+            <summary>Gets or sets a value indicating the maximum number of directories to return by the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.BrowserSettings.maximumDirectories"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.BrowserSettings.MaximumFiles">
+            <summary>Gets or sets a value indicating the maximum number of files to return by the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.BrowserSettings.maximumFiles"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.BrowserSettings.MinimumDirectories">
+            <summary>Gets or sets a value indicating the minimum number of directories to return by the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.BrowserSettings.minimumDirectories"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.BrowserSettings.MinimumFiles">
+            <summary>Gets or sets a value indicating the minimum number of files to return by the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.BrowserSettings.minimumFiles"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.BrowserSettings.Path">
+            <summary>Gets or sets a value indicating the path of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.BrowserSettings.path"/> field.</value>
+        </member>
+        <member name="T:Emi.UserControls.ErrorWindow">
+            <summary>Provides an error window for the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+        </member>
+        <member name="M:Emi.UserControls.ErrorWindow.#ctor(System.Windows.Window,System.String,System.String)">
+            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.ErrorWindow"/> class.</summary>
+            <param name="ownerWindow">The owner of the window.</param>
+            <param name="path">The path causing the error.</param>
+            <param name="message">The error message.</param>
+        </member>
+        <member name="M:Emi.UserControls.ErrorWindow.ActionButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>Closes the window when the button is clicked.</summary>
+            <param name="sender">The sender object of the event handler.</param>
+            <param name="e">The state information of the event handler.</param>
+        </member>
+        <member name="M:Emi.UserControls.ErrorWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Emi.UserControls.FileSystemBrowserWindow">
+            <content>Contains the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.FileSystemItemType"/> enumeration.</content>
+            <content>Contains the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.ByteConverter"/> class.</content>
+            <content>Contains the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.ComputerItem"/> class.</content>
+            <content>Contains the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem"/> class.</content>
+            <content>Contains the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.PathButton"/> class.</content>
+            <summary>Provides a file system browser window.</summary>
+            <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.ActionButton_Click(System.Object,System.Windows.RoutedEventArgs)"/> method.</content>
+            <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.ComputerListView_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)"/> method.</content>
+            <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.FileSystemListView_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)"/> method.</content>
+            <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.FileSystemListView_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)"/> method.</content>
+            <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.GeneratePath"/> method.</content>
+            <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.ListComputer"/> method.</content>
+            <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.ListFileSystem"/> method.</content>
+            <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.Navigate(System.String)"/> method.</content>
+            <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.PathButton_Click(System.Object,System.Windows.RoutedEventArgs)"/> method.</content>
+            <content>Contains the <see cref="P:Emi.UserControls.FileSystemBrowserWindow.SelectedDirectories"/> property.</content>
+            <content>Contains the <see cref="P:Emi.UserControls.FileSystemBrowserWindow.SelectedFiles"/> property.</content>
+            <summary>
+            FileSystemBrowserWindow
+            </summary>
+        </member>
+        <member name="T:Emi.UserControls.FileSystemBrowserWindow.FileSystemItemType">
+            <summary>The type of file system item type for the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.fileSystemListView"/> class.</summary>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItemType.Directory">
+            <summary>Represents that the file system item is a directory.</summary>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItemType.File">
+            <summary>Represents that the file system item is a file.</summary>
+        </member>
+        <member name="T:Emi.UserControls.FileSystemBrowserWindow.ByteConverter">
+            <summary>Provides a byte converter for the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.ByteConverter.Prefixes">
+            <summary>The prefixes of the International System of Units.</summary>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.ByteConverter.Process(System.Int64,Emi.UserControls.ByteMultiple)">
+            <summary>Processes a file size by converting it to the appropriate prefix.</summary>
+            <param name="bytes">The file size in bytes.</param>
+            <param name="byteMultiple">The multiple of bytes.</param>
+            <returns>The converted and formatted file size.</returns>
+        </member>
+        <member name="T:Emi.UserControls.FileSystemBrowserWindow.ComputerItem">
+            <summary>Provides a computer item for the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.byteMultiple">
+            <summary>The byte multiple of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.ByteConverter"/> class.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.ByteMultiple"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.availableFreeSpaceLong">
+            <summary>The available free space on the drive in bytes.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.AvailableFreeSpaceLong"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.totalFreeSpaceLong">
+            <summary>The total free space on the drive in bytes.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.TotalFreeSpaceLong"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.totalSizeLong">
+            <summary>The total size of the drive in bytes.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.TotalSizeLong"/> property.</remarks>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.ByteMultiple">
+            <summary>Gets or sets a value indicating the byte multiple of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.ByteConverter"/> class.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.byteMultiple"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.AvailableFreeSpace">
+            <summary>Gets a value indicating the available free space on the drive.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.availableFreeSpaceLong"/> field after being processed by the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.ByteConverter"/> class.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.DriveFormat">
+            <summary>Gets or sets a value indicating the format of the drive.</summary>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.DriveType">
+            <summary>Gets or sets a value indicating the type of the drive.</summary>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.Name">
+            <summary>Gets or sets a value indicating the name of the drive.</summary>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.RootDirectory">
+            <summary>Gets or sets a value indicating the root directory of the drive.</summary>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.TotalFreeSpace">
+            <summary>Gets a value indicating the total free space on the drive.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.totalFreeSpaceLong"/> field after being processed by the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.ByteConverter"/> class.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.TotalSize">
+            <summary>Gets a value indicating the total size of the drive.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.totalSizeLong"/> field after being processed by the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.ByteConverter"/> class.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.VolumeLabel">
+            <summary>Gets or sets a value indicating the volume label of the drive.</summary>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.AvailableFreeSpaceLong">
+            <summary>Sets a value indicating the available free space on the drive.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.availableFreeSpaceLong"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.TotalFreeSpaceLong">
+            <summary>Sets a value indicating the total free space on the drive.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.totalFreeSpaceLong"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.TotalSizeLong">
+            <summary>Sets a value indicating the total size of the drive.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.ComputerItem.totalSizeLong"/> field.</value>
+        </member>
+        <member name="T:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem">
+            <summary>Provides a file system item for the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.currentCultureInfo">
+            <summary>The current culture information.</summary>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.byteMultiple">
+            <summary>The byte multiple of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.ByteConverter"/> class.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.ByteMultiple"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.creationTime">
+            <summary>The time of the creation of the file system item.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.Created"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.lastAccessTime">
+            <summary>The time of the last access to the file system item.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.Accessed"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.lastWriteTime">
+            <summary>The time of the last write to the file system item.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.Written"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.fileSystemItemType">
+            <summary>The type of the file system item.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.FileSystemItemType"/> property.</remarks>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.length">
+            <summary>The size of the file in bytes.</summary>
+            <remarks>The store for the <see cref="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.Length"/> property.</remarks>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.ByteMultiple">
+            <summary>Gets or sets a value indicating the byte multiple of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.ByteConverter"/> class.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.byteMultiple"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.FileSystemItemType">
+            <summary>Gets or sets a value indicating the type of the file system item.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.fileSystemItemType"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.Accessed">
+            <summary>Sets a value indicating the last access to the file system item.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.lastAccessTime"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.Created">
+            <summary>Sets a value indicating the time of the creation of the file system item.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.creationTime"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.Written">
+            <summary>Sets a value indicating the last write to the file system item.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.lastWriteTime"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.Length">
+            <summary>Sets a value indicating the size of the file.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.length"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.CreationTime">
+            <summary>Gets a value indicating the time of the creation of the file system item.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.creationTime"/> field after being converted to a string.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.LastAccessTime">
+            <summary>Gets a value indicating the last access to the file system item.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.lastAccessTime"/> field after being converted to a string.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.LastWriteTime">
+            <summary>Gets a value indicating the last write to the file system item.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.lastWriteTime"/> field after being converted to a string.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.Name">
+            <summary>Gets or sets a value indicating the name of the file system item.</summary>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.Size">
+            <summary>Gets a value indicating the size of the file.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem.length"/> field after being processed by the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.ByteConverter"/> class.</value>
+        </member>
+        <member name="T:Emi.UserControls.FileSystemBrowserWindow.PathButton">
+            <summary>Provides path buttons for the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.PathButton.path">
+            <summary>The path to which to navigate.</summary>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.PathButton.#ctor(System.String,System.String,System.Windows.RoutedEventHandler)">
+            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.PathButton"/> class.</summary>
+            <param name="text">The text of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.PathButton"/> class.</param>
+            <param name="path">The path to which to navigate.</param>
+            <param name="clickRoutedEventHandler">The event handler for the Click event of the Button class.</param>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.PathButton.Path">
+            <summary>Gets a value indicating to which directory to navigate.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.PathButton.path"/> field.</value>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.browserFilter">
+            <summary>The file filter of the browser.</summary>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.browserSettings">
+            <summary>The settings of the browser.</summary>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.selectedDirectories">
+            <summary>The selected directories in the browser.</summary>
+        </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.selectedFiles">
+            <summary>The selected files in the browser.</summary>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.#ctor(Emi.UserControls.BrowserFilter)">
+            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <param name="browserFilter">The file filter for the browser.</param>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.#ctor(Emi.UserControls.BrowserFilter,Emi.UserControls.BrowserSettings)">
+            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <param name="browserFilter">The file filter for the browser.</param>
+            <param name="browserSettings">The settings for the browser.</param>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.#ctor(Emi.UserControls.BrowserSettings)">
+            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+            <param name="browserSettings">The settings for the browser.</param>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.ActionButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>Closes the window and signals that the browsing was successful when the button is clicked.</summary>
+            <param name="sender">The sender object of the event handler.</param>
+            <param name="e">The state information of the event handler.</param>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.ComputerListView_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>Browses to the drive when the button is double-clicked.</summary>
+            <param name="sender">The sender object of the event handler.</param>
+            <param name="e">The state information of the event handler.</param>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.FileSystemListView_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>Browses to the directory when the button is double-clicked.</summary>
+            <param name="sender">The sender object of the event handler.</param>
+            <param name="e">The state information of the event handler.</param>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.FileSystemListView_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>Validates the selection when the selection is changed.</summary>
+            <param name="sender">The sender object of the event handler.</param>
+            <param name="e">The state information of the event handler.</param>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.GeneratePath">
+            <summary>Generates the path as instances of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.PathButton"/> class.</summary>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.ListComputer">
+            <summary>Lists the drives of the computer.</summary>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.ListFileSystem">
+            <summary>Lists the directories and files of the path.</summary>
+            <remarks>If an exception is thrown during the tries then the navigation is redirected to the parent directory.</remarks>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.Navigate(System.String)">
+            <summary>Navigates to the specified path.</summary>
+            <remarks>If an exception is thrown during the try then the navigation is aborted.</remarks>
+            <param name="path">The path to which to navigate.</param>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.PathButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>Browses to the directory when the button is clicked.</summary>
+            <param name="sender">The sender object of the event handler.</param>
+            <param name="e">The state information of the event handler.</param>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.SelectedDirectories">
+            <summary>Gets a value indicating the selected directories.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.selectedDirectories"/> field.</value>
+        </member>
+        <member name="P:Emi.UserControls.FileSystemBrowserWindow.SelectedFiles">
+            <summary>Gets a value indicating the selected files.</summary>
+            <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.selectedFiles"/> field.</value>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Emi.UserControls.MinimumGreaterThanMaximumException">
+            <summary>Thrown when the minimum number of directories/files is greater than the maximum number of directories/files.</summary>
+        </member>
+        <member name="M:Emi.UserControls.MinimumGreaterThanMaximumException.#ctor">
+            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.MinimumGreaterThanMaximumException"/> class.</summary>
+        </member>
+        <member name="M:Emi.UserControls.MinimumGreaterThanMaximumException.#ctor(System.String)">
+            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.MinimumGreaterThanMaximumException"/> class.</summary>
+            <param name="message">The message for the exception.</param>
+        </member>
+        <member name="M:Emi.UserControls.MinimumGreaterThanMaximumException.#ctor(System.String,System.Exception)">
+            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.MinimumGreaterThanMaximumException"/> class.</summary>
+            <param name="message">The message for the exception.</param>
+            <param name="innerException">The inner exception for the exception.</param>
+        </member>
+        <member name="M:Emi.UserControls.MinimumGreaterThanMaximumException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.MinimumGreaterThanMaximumException"/> class.</summary>
+            <param name="info">The serialisation information for the exception.</param>
+            <param name="context">The streaming context for the exception.</param>
+        </member>
+        <member name="T:Emi.UserControls.Resources.Buttons">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Buttons.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Buttons.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Buttons.Cancel">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Buttons.Ok">
+            <summary>
+              Looks up a localized string similar to OK.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Buttons.Open">
+            <summary>
+              Looks up a localized string similar to Open.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Buttons.Select">
+            <summary>
+              Looks up a localized string similar to Select.
+            </summary>
+        </member>
+        <member name="T:Emi.UserControls.Resources.ComputerGridViewColumns">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.ComputerGridViewColumns.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.ComputerGridViewColumns.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.ComputerGridViewColumns.AvailableFreeSpace">
+            <summary>
+              Looks up a localized string similar to Available free space.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.ComputerGridViewColumns.DriveFormat">
+            <summary>
+              Looks up a localized string similar to Format.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.ComputerGridViewColumns.DriveType">
+            <summary>
+              Looks up a localized string similar to Type.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.ComputerGridViewColumns.Name">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.ComputerGridViewColumns.RootDirectory">
+            <summary>
+              Looks up a localized string similar to Root directory.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.ComputerGridViewColumns.TotalFreeSpace">
+            <summary>
+              Looks up a localized string similar to Total free space.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.ComputerGridViewColumns.TotalSize">
+            <summary>
+              Looks up a localized string similar to Total size.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.ComputerGridViewColumns.VolumeLabel">
+            <summary>
+              Looks up a localized string similar to Volume label.
+            </summary>
+        </member>
+        <member name="T:Emi.UserControls.Resources.DriveTypeEnumerations">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.DriveTypeEnumerations.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.DriveTypeEnumerations.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.DriveTypeEnumerations.CDRom">
+            <summary>
+              Looks up a localized string similar to Disc.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.DriveTypeEnumerations.Fixed">
+            <summary>
+              Looks up a localized string similar to Fixed.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.DriveTypeEnumerations.Network">
+            <summary>
+              Looks up a localized string similar to Network.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.DriveTypeEnumerations.NoRootDirectory">
+            <summary>
+              Looks up a localized string similar to No root directory.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.DriveTypeEnumerations.Ram">
+            <summary>
+              Looks up a localized string similar to Working memory.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.DriveTypeEnumerations.Removable">
+            <summary>
+              Looks up a localized string similar to Removable.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.DriveTypeEnumerations.Unknown">
+            <summary>
+              Looks up a localized string similar to Unknown.
+            </summary>
+        </member>
+        <member name="T:Emi.UserControls.Resources.Exceptions">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Exceptions.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Exceptions.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Exceptions.DirectoryNotFoundMessage">
+            <summary>
+              Looks up a localized string similar to The directory was not found..
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Exceptions.IOMessage">
+            <summary>
+              Looks up a localized string similar to An input/output error occurred..
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Exceptions.PathTooLongMessage">
+            <summary>
+              Looks up a localized string similar to The path is too long..
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Exceptions.SecurityMessage">
+            <summary>
+              Looks up a localized string similar to Access is unauthorised. Administrative privileges are required..
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Exceptions.UnauthorizedAccessMessage">
+            <summary>
+              Looks up a localized string similar to Access is unauthorised..
+            </summary>
+        </member>
+        <member name="T:Emi.UserControls.Resources.FileSystemGridViewColumns">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.FileSystemGridViewColumns.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.FileSystemGridViewColumns.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.FileSystemGridViewColumns.CreationTime">
+            <summary>
+              Looks up a localized string similar to Created.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.FileSystemGridViewColumns.LastAccessTime">
+            <summary>
+              Looks up a localized string similar to Modified.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.FileSystemGridViewColumns.LastWriteTime">
+            <summary>
+              Looks up a localized string similar to Accessed.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.FileSystemGridViewColumns.Name">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.FileSystemGridViewColumns.Size">
+            <summary>
+              Looks up a localized string similar to Size.
+            </summary>
+        </member>
+        <member name="T:Emi.UserControls.Resources.NavigationButtons">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.NavigationButtons.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.NavigationButtons.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.NavigationButtons.Desktop">
+            <summary>
+              Looks up a localized string similar to Desktop.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.NavigationButtons.Documents">
+            <summary>
+              Looks up a localized string similar to Documents.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.NavigationButtons.Music">
+            <summary>
+              Looks up a localized string similar to Music.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.NavigationButtons.Pictures">
+            <summary>
+              Looks up a localized string similar to Pictures.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.NavigationButtons.Recent">
+            <summary>
+              Looks up a localized string similar to Recent.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.NavigationButtons.Videos">
+            <summary>
+              Looks up a localized string similar to Videos.
+            </summary>
+        </member>
+        <member name="T:Emi.UserControls.Resources.PathButton">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.PathButton.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.PathButton.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.PathButton.Computer">
+            <summary>
+              Looks up a localized string similar to Computer.
+            </summary>
+        </member>
+        <member name="T:Emi.UserControls.Resources.Titles">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.Error">
+            <summary>
+              Looks up a localized string similar to Error.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.OpenFile">
+            <summary>
+              Looks up a localized string similar to Open File.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.OpenFiles">
+            <summary>
+              Looks up a localized string similar to Open Files.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.OpenFolder">
+            <summary>
+              Looks up a localized string similar to Open Folder.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.OpenFolderAndFile">
+            <summary>
+              Looks up a localized string similar to Open Folder/File.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.OpenFolderAndFiles">
+            <summary>
+              Looks up a localized string similar to Open Folder/Files.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.OpenFolders">
+            <summary>
+              Looks up a localized string similar to Open Folders.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.OpenFoldersAndFile">
+            <summary>
+              Looks up a localized string similar to Open Folders/File.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.OpenFoldersAndFiles">
+            <summary>
+              Looks up a localized string similar to Open Folders/Files.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.SelectFile">
+            <summary>
+              Looks up a localized string similar to Select File.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.SelectFiles">
+            <summary>
+              Looks up a localized string similar to Select Files.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.SelectFolder">
+            <summary>
+              Looks up a localized string similar to Select Folder.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.SelectFolderAndFile">
+            <summary>
+              Looks up a localized string similar to Select Folder/File.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.SelectFolderAndFiles">
+            <summary>
+              Looks up a localized string similar to Select Folder/Files.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.SelectFolders">
+            <summary>
+              Looks up a localized string similar to Select Folders.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.SelectFoldersAndFile">
+            <summary>
+              Looks up a localized string similar to Select Folders/File.
+            </summary>
+        </member>
+        <member name="P:Emi.UserControls.Resources.Titles.SelectFoldersAndFiles">
+            <summary>
+              Looks up a localized string similar to Select Folders/Files.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>
