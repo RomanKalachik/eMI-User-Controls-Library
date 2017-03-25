@@ -3,7 +3,7 @@
   <PropertyGroup>
     <SolutionProject>CloseableTabItem</SolutionProject>
   </PropertyGroup>
-  <Import Project="..\Solution.targets" />
+  <Import Project="..\Solution.props" />
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <ProjectGuid>{2FD08838-FC67-4F24-94B6-236D75351BB7}</ProjectGuid>

@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<SolutionProject>FileSystemBrowserWindowTesting</SolutionProject>
 	</PropertyGroup>
-	<Import Project="..\Solution.targets"/>
+	<Import Project="..\Solution.props"/>
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
 		<ProjectGuid>{4EDCA3D5-A55D-4A7D-BC1F-C55AB8939FB9}</ProjectGuid>

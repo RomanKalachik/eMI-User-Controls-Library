@@ -37,8 +37,8 @@
         </Rule>
       </Rules>
       <AnalyzerSettings>
-        <StringProperty Name="CompanyName">eMedia Intellect</StringProperty>
-        <StringProperty Name="Copyright">Copyright © 2016 eMedia Intellect</StringProperty>
+        <StringProperty Name="CompanyName">eMedia Intellect℠</StringProperty>
+        <StringProperty Name="Copyright">Copyright © 2016–2017 eMedia Intellect℠</StringProperty>
       </AnalyzerSettings>
     </Analyzer>
   </Analyzers>

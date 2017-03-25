@@ -1,6 +1,6 @@
 ﻿// <author>Stefán Örvar Sigmundsson</author>
-// <copyright company="eMedia Intellect" file="GlobalAssemblyInfo.cs">
-//    Copyright © 2016 eMedia Intellect
+// <copyright company="eMedia Intellect℠" file="GlobalAssemblyInfo.cs">
+//    Copyright © 2016–2017 eMedia Intellect℠
 // </copyright>
 // <licence>
 //    This file is part of eMI User Controls Library.
@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 #else
 [assembly: AssemblyConfiguration("Release")]
 #endif
-[assembly: AssemblyCopyright("Copyright © eMedia Intellect 2016")]
+[assembly: AssemblyCopyright("Copyright © 2016–2017 eMedia Intellect℠")]
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyFileVersion("1.1.0.0")]
 [assembly: AssemblyInformationalVersion("1.1.0.0")]

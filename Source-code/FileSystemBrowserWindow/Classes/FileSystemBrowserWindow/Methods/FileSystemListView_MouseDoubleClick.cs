@@ -1,6 +1,6 @@
 ﻿// <author>Stefán Örvar Sigmundsson</author>
-// <copyright company="eMedia Intellect" file="FileSystemListView_MouseDoubleClick.cs">
-//    Copyright © 2016 eMedia Intellect
+// <copyright company="eMedia Intellect℠" file="FileSystemListView_MouseDoubleClick.cs">
+//    Copyright © 2016–2017 eMedia Intellect℠
 // </copyright>
 // <licence>
 //    This file is part of eMI User Controls Library.

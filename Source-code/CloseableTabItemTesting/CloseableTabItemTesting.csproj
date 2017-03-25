@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<SolutionProject>CloseableTabItemTesting</SolutionProject>
 	</PropertyGroup>
-	<Import Project="..\Solution.targets"/>
+	<Import Project="..\Solution.props"/>
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
 		<ProjectGuid>{6E14F2B2-2D7B-4D09-869B-1120090A814A}</ProjectGuid>

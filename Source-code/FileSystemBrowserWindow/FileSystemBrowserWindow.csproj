@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<SolutionProject>FileSystemBrowserWindow</SolutionProject>
 	</PropertyGroup>
-	<Import Project="..\Solution.targets"/>
+	<Import Project="..\Solution.props"/>
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
 		<ProjectGuid>{8FFCD607-FC0C-48AA-B9E1-11C6DEEAE150}</ProjectGuid>
