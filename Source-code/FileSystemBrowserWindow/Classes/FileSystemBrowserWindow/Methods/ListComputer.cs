@@ -144,6 +144,12 @@ namespace Emi.UserControls
             }
 
             this.fileSystemListView.Visibility = Visibility.Collapsed;
+
+            if (this.computerListView.HasItems)
+            {
+                this.computerListView.ScrollIntoView(this.computerListView.Items[0]);
+            }
+
             this.computerListView.Visibility = Visibility.Visible;
         }
     }

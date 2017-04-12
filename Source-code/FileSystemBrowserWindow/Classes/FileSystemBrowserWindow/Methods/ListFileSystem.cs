@@ -35,9 +35,6 @@ namespace Emi.UserControls
         {
             this.fileSystemListView.Items.Clear();
 
-            this.computerListView.Visibility = Visibility.Collapsed;
-            this.fileSystemListView.Visibility = Visibility.Visible;
-
             DirectoryInfo listingDirectoryInfo = new DirectoryInfo(this.browserSettings.Path);
 
             try
@@ -98,6 +95,15 @@ namespace Emi.UserControls
 
                 return;
             }
+
+            this.computerListView.Visibility = Visibility.Collapsed;
+
+            if (this.fileSystemListView.HasItems)
+            {
+                this.fileSystemListView.ScrollIntoView(this.fileSystemListView.Items[0]);
+            }
+
+            this.fileSystemListView.Visibility = Visibility.Visible;
         }
     }
 }
