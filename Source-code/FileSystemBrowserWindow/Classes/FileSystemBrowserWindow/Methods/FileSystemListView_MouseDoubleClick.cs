@@ -35,11 +35,29 @@ namespace Emi.UserControls
         {
             ListViewItem senderListViewItem = (ListViewItem)sender;
 
-            FileSystemItem senderDirectory = senderListViewItem.Content as FileSystemItem;
+            FileSystemItem senderFileSystemItem = (FileSystemItem)senderListViewItem.Content;
 
-            if (senderDirectory != null)
+            if (senderFileSystemItem != null)
             {
-                this.Navigate(this.browserSettings.Path + Path.DirectorySeparatorChar + senderDirectory.Name);
+                bool canNavigate = false;
+
+                try
+                {
+                    FileAttributes senderFileAttributes = File.GetAttributes(this.browserSettings.Path + Path.DirectorySeparatorChar + senderFileSystemItem.Name);
+
+                    if ((senderFileAttributes & FileAttributes.Directory) == FileAttributes.Directory)
+                    {
+                        canNavigate = true;
+                    }
+                }
+                catch
+                {
+                }
+
+                if (canNavigate)
+                {
+                    this.Navigate(this.browserSettings.Path + Path.DirectorySeparatorChar + senderFileSystemItem.Name);
+                }
             }
         }
     }

@@ -21,6 +21,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 
+[assembly: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "The exception type is not important.", Scope = "member", Target = "Emi.UserControls.FileSystemBrowserWindow.#FileSystemListView_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)")]
 [assembly: SuppressMessage("Microsoft.Design", "CA2210:AssembliesShouldHaveValidStrongNames", Justification = "Assembly signing is not required.")]
 [assembly: SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = "The method is called by an property which is intended to be called by external assemblies.", Scope = "member", Target = "Emi.UserControls.FileSystemBrowserWindow+ByteConverter.#Process(System.Int64,Emi.UserControls.ByteMultiple)")]
 [assembly: SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = "The method is intended to be called by external assemblies.", Scope = "member", Target = "Emi.UserControls.FileSystemBrowserWindow+ComputerItem.#ByteMultiple")]

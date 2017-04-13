@@ -34,9 +34,9 @@ namespace Emi.UserControls
         {
             ListViewItem senderListViewItem = (ListViewItem)sender;
 
-            ComputerItem senderDirectory = (ComputerItem)senderListViewItem.Content;
+            ComputerItem senderComputerItem = (ComputerItem)senderListViewItem.Content;
 
-            this.Navigate(senderDirectory.Name);
+            this.Navigate(senderComputerItem.Name);
         }
     }
 }
