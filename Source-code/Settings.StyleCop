@@ -1,52 +1,52 @@
 ﻿<StyleCopSettings Version="105">
-  <GlobalSettings>
-    <BooleanProperty Name="WriteCache">False</BooleanProperty>
-    <IntegerProperty Name="DaysToCheckForUpdates">0</IntegerProperty>
-    <StringProperty Name="Culture">en-GB</StringProperty>
-    <CollectionProperty Name="RecognizedWords">
-      <Value>closeable</Value>
-    </CollectionProperty>
-  </GlobalSettings>
-  <Analyzers>
-    <Analyzer AnalyzerId="StyleCop.CSharp.DocumentationRules">
-      <Rules>
-        <Rule Name="PropertyDocumentationMustHaveValue">
-          <RuleSettings>
-            <BooleanProperty Name="Enabled">True</BooleanProperty>
-          </RuleSettings>
-        </Rule>
-        <Rule Name="PropertyDocumentationMustHaveValueText">
-          <RuleSettings>
-            <BooleanProperty Name="Enabled">True</BooleanProperty>
-          </RuleSettings>
-        </Rule>
-        <Rule Name="DocumentationTextMustBeginWithACapitalLetter">
-          <RuleSettings>
-            <BooleanProperty Name="Enabled">True</BooleanProperty>
-          </RuleSettings>
-        </Rule>
-        <Rule Name="DocumentationTextMustEndWithAPeriod">
-          <RuleSettings>
-            <BooleanProperty Name="Enabled">True</BooleanProperty>
-          </RuleSettings>
-        </Rule>
-        <Rule Name="DocumentationTextMustMeetMinimumCharacterLength">
-          <RuleSettings>
-            <BooleanProperty Name="Enabled">True</BooleanProperty>
-          </RuleSettings>
-        </Rule>
-      </Rules>
-      <AnalyzerSettings>
-        <StringProperty Name="CompanyName">eMedia Intellect℠</StringProperty>
-        <StringProperty Name="Copyright">Copyright © 2016–2017 eMedia Intellect℠</StringProperty>
-      </AnalyzerSettings>
-    </Analyzer>
-    <Analyzer AnalyzerId="StyleCop.CSharp.NamingRules">
-      <AnalyzerSettings>
-        <CollectionProperty Name="Hungarian">
-          <Value>is</Value>
-        </CollectionProperty>
-      </AnalyzerSettings>
-    </Analyzer>
-  </Analyzers>
+	<GlobalSettings>
+		<BooleanProperty Name="WriteCache">False</BooleanProperty>
+		<IntegerProperty Name="DaysToCheckForUpdates">0</IntegerProperty>
+		<StringProperty Name="Culture">en-GB</StringProperty>
+		<CollectionProperty Name="RecognizedWords">
+			<Value>closeable</Value>
+		</CollectionProperty>
+	</GlobalSettings>
+	<Analyzers>
+		<Analyzer AnalyzerId="StyleCop.CSharp.DocumentationRules">
+			<Rules>
+				<Rule Name="PropertyDocumentationMustHaveValue">
+					<RuleSettings>
+						<BooleanProperty Name="Enabled">True</BooleanProperty>
+					</RuleSettings>
+				</Rule>
+				<Rule Name="PropertyDocumentationMustHaveValueText">
+					<RuleSettings>
+						<BooleanProperty Name="Enabled">True</BooleanProperty>
+					</RuleSettings>
+				</Rule>
+				<Rule Name="DocumentationTextMustBeginWithACapitalLetter">
+					<RuleSettings>
+						<BooleanProperty Name="Enabled">True</BooleanProperty>
+					</RuleSettings>
+				</Rule>
+				<Rule Name="DocumentationTextMustEndWithAPeriod">
+					<RuleSettings>
+						<BooleanProperty Name="Enabled">True</BooleanProperty>
+					</RuleSettings>
+				</Rule>
+				<Rule Name="DocumentationTextMustMeetMinimumCharacterLength">
+					<RuleSettings>
+						<BooleanProperty Name="Enabled">True</BooleanProperty>
+					</RuleSettings>
+				</Rule>
+			</Rules>
+			<AnalyzerSettings>
+				<StringProperty Name="CompanyName">eMedia Intellect℠</StringProperty>
+				<StringProperty Name="Copyright">Copyright © 2016–2017 eMedia Intellect℠</StringProperty>
+			</AnalyzerSettings>
+		</Analyzer>
+		<Analyzer AnalyzerId="StyleCop.CSharp.NamingRules">
+			<AnalyzerSettings>
+				<CollectionProperty Name="Hungarian">
+					<Value>is</Value>
+				</CollectionProperty>
+			</AnalyzerSettings>
+		</Analyzer>
+	</Analyzers>
 </StyleCopSettings>
