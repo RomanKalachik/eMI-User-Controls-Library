@@ -32,7 +32,7 @@
                 </StackPanel.Resources>
             </StackPanel>
         </ScrollViewer>
-        <ListView Grid.Column="1" Grid.Row="1" Margin="0, 0, 0, 5" Name="computerListView" Visibility="Collapsed">
+        <ListView Grid.Column="1" Grid.Row="1" Margin="0, 0, 0, 5" Name="computerListView" SelectionChanged="ComputerListView_SelectionChanged" Visibility="Collapsed">
             <ListView.Resources>
                 <Style TargetType="{x:Type ListViewItem}">
                     <EventSetter Event="MouseDoubleClick" Handler="ComputerListView_MouseDoubleClick"/>
