@@ -199,6 +199,7 @@
             <summary>Provides a file system browser window.</summary>
             <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.ActionButton_Click(System.Object,System.Windows.RoutedEventArgs)"/> method.</content>
             <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.ComputerListView_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)"/> method.</content>
+            <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.ComputerListView_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)"/> method.</content>
             <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.FileSystemListView_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)"/> method.</content>
             <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.FileSystemListView_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)"/> method.</content>
             <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.GeneratePath"/> method.</content>
@@ -419,6 +420,11 @@
         </member>
         <member name="M:Emi.UserControls.FileSystemBrowserWindow.ComputerListView_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
             <summary>Browses to the drive when the button is double-clicked.</summary>
+            <param name="sender">The sender object of the event handler.</param>
+            <param name="e">The state information of the event handler.</param>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.ComputerListView_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>Validates the selection when the selection is changed.</summary>
             <param name="sender">The sender object of the event handler.</param>
             <param name="e">The state information of the event handler.</param>
         </member>

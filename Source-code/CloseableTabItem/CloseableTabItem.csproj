@@ -1,62 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<PropertyGroup>
-		<SolutionProject>CloseableTabItem</SolutionProject>
-	</PropertyGroup>
-	<Import Project="..\Solution.props"/>
-	<PropertyGroup>
-		<OutputType>Library</OutputType>
-		<ProjectGuid>{2FD08838-FC67-4F24-94B6-236D75351BB7}</ProjectGuid>
-		<ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-	</PropertyGroup>
-	<ItemGroup>
-		<Reference Include="PresentationCore"/>
-		<Reference Include="PresentationFramework"/>
-		<Reference Include="System"/>
-		<Reference Include="System.Xaml"/>
-		<Reference Include="System.Windows"/>
-		<Reference Include="WindowsBase"/>
-	</ItemGroup>
-	<ItemGroup>
-		<Compile Include="..\Solution Items\GlobalAssemblyInfo.cs">
-			<Link>Properties\GlobalAssemblyInfo.cs</Link>
-		</Compile>
-		<Compile Include="Properties\AssemblyInfo.cs">
-			<SubType>Code</SubType>
-		</Compile>
-	</ItemGroup>
-	<ItemGroup>
-		<Compile Include="Classes\CloseableHeader.xaml.cs">
-			<DependentUpon>CloseableHeader.xaml</DependentUpon>
-		</Compile>
-		<Compile Include="Classes\CloseableTabItem\CloseableTabItem.cs"/>
-		<Compile Include="Classes\CloseableTabItem\Methods\CloseButton_Click.cs"/>
-		<Compile Include="Classes\CloseableTabItem\Methods\CloseButton_MouseEnter.cs"/>
-		<Compile Include="Classes\CloseableTabItem\Methods\CloseButton_MouseLeave.cs"/>
-		<Compile Include="Classes\CloseableTabItem\Methods\OnMouseEnter.cs"/>
-		<Compile Include="Classes\CloseableTabItem\Methods\OnMouseLeave.cs"/>
-		<Compile Include="Classes\CloseableTabItem\Methods\OnSelected.cs"/>
-		<Compile Include="Classes\CloseableTabItem\Methods\OnUnselected.cs"/>
-		<Compile Include="Classes\CloseableTabItem\Methods\TitleLabel_SizeChanged.cs"/>
-		<Compile Include="Classes\CloseableTabItem\Properties\IsCloseable.cs"/>
-		<Compile Include="Classes\CloseableTabItem\Properties\Title.cs"/>
-		<Compile Include="GlobalSuppressions.cs"/>
-		<Compile Include="Resources\ToolTip.Designer.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>ToolTip.resx</DependentUpon>
-			<DesignTime>True</DesignTime>
-		</Compile>
-		<EmbeddedResource Include="Resources\ToolTip.en.resx"/>
-		<EmbeddedResource Include="Resources\ToolTip.es.resx"/>
-		<EmbeddedResource Include="Resources\ToolTip.is.resx"/>
-		<EmbeddedResource Include="Resources\ToolTip.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>ToolTip.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
-		<Page Include="Classes\CloseableHeader.xaml">
-			<Generator>MSBuild:Compile</Generator>
-			<SubType>Designer</SubType>
-		</Page>
-	</ItemGroup>
-	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+  <PropertyGroup>
+    <SolutionProject>CloseableTabItem</SolutionProject>
+  </PropertyGroup>
+  <Import Project="..\Solution.props" />
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <ProjectGuid>{2FD08838-FC67-4F24-94B6-236D75351BB7}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Windows" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Solution Items\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\CloseableHeader.xaml.cs">
+      <DependentUpon>CloseableHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\CloseableTabItem\CloseableTabItem.cs" />
+    <Compile Include="Classes\CloseableTabItem\Methods\CloseButton_Click.cs" />
+    <Compile Include="Classes\CloseableTabItem\Methods\CloseButton_MouseEnter.cs" />
+    <Compile Include="Classes\CloseableTabItem\Methods\CloseButton_MouseLeave.cs" />
+    <Compile Include="Classes\CloseableTabItem\Methods\OnMouseEnter.cs" />
+    <Compile Include="Classes\CloseableTabItem\Methods\OnMouseLeave.cs" />
+    <Compile Include="Classes\CloseableTabItem\Methods\OnSelected.cs" />
+    <Compile Include="Classes\CloseableTabItem\Methods\OnUnselected.cs" />
+    <Compile Include="Classes\CloseableTabItem\Methods\TitleLabel_SizeChanged.cs" />
+    <Compile Include="Classes\CloseableTabItem\Properties\IsCloseable.cs" />
+    <Compile Include="Classes\CloseableTabItem\Properties\Title.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Resources\ToolTip.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ToolTip.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Resources\ToolTip.en.resx" />
+    <EmbeddedResource Include="Resources\ToolTip.es.resx" />
+    <EmbeddedResource Include="Resources\ToolTip.is.resx" />
+    <EmbeddedResource Include="Resources\ToolTip.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ToolTip.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Page Include="Classes\CloseableHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
