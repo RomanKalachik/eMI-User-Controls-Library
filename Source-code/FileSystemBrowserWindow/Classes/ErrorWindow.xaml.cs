@@ -37,7 +37,15 @@ namespace Emi.UserControls
 
             this.actionButton.Content = UserControls.Resources.Buttons.Ok;
             this.messageTextBlock.Text = path + Environment.NewLine + Environment.NewLine + message;
-            this.Owner = ownerWindow;
+
+            try
+            {
+                this.Owner = ownerWindow;
+            }
+            catch (InvalidOperationException)
+            {
+            }
+
             this.Title = UserControls.Resources.Titles.Error;
         }
 
