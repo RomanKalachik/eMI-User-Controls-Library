@@ -61,11 +61,38 @@ namespace Emi.UserControls.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Available free space.
+        /// </summary>
+        internal static string AvailableFreeSpace {
+            get {
+                return ResourceManager.GetString("AvailableFreeSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Created.
         /// </summary>
         internal static string CreationTime {
             get {
                 return ResourceManager.GetString("CreationTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Format.
+        /// </summary>
+        internal static string DriveFormat {
+            get {
+                return ResourceManager.GetString("DriveFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        internal static string DriveType {
+            get {
+                return ResourceManager.GetString("DriveType", resourceCulture);
             }
         }
         
@@ -97,11 +124,47 @@ namespace Emi.UserControls.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Root directory.
+        /// </summary>
+        internal static string RootDirectory {
+            get {
+                return ResourceManager.GetString("RootDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Size.
         /// </summary>
         internal static string Size {
             get {
                 return ResourceManager.GetString("Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total free space.
+        /// </summary>
+        internal static string TotalFreeSpace {
+            get {
+                return ResourceManager.GetString("TotalFreeSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total size.
+        /// </summary>
+        internal static string TotalSize {
+            get {
+                return ResourceManager.GetString("TotalSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volume label.
+        /// </summary>
+        internal static string VolumeLabel {
+            get {
+                return ResourceManager.GetString("VolumeLabel", resourceCulture);
             }
         }
     }

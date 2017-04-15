@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AvailableFreeSpace" xml:space="preserve">
+    <value>Espacio libre disponible</value>
+  </data>
   <data name="CreationTime" xml:space="preserve">
     <value>Creado</value>
+  </data>
+  <data name="DriveFormat" xml:space="preserve">
+    <value>Formato</value>
+  </data>
+  <data name="DriveType" xml:space="preserve">
+    <value>Tipo</value>
   </data>
   <data name="LastAccessTime" xml:space="preserve">
     <value>Modificado</value>
@@ -129,7 +138,19 @@
   <data name="Name" xml:space="preserve">
     <value>Nombre</value>
   </data>
+  <data name="RootDirectory" xml:space="preserve">
+    <value>Directorio raíz</value>
+  </data>
   <data name="Size" xml:space="preserve">
     <value>Tamaño</value>
+  </data>
+  <data name="TotalFreeSpace" xml:space="preserve">
+    <value>Espacio libre total</value>
+  </data>
+  <data name="TotalSize" xml:space="preserve">
+    <value>Tamaño total</value>
+  </data>
+  <data name="VolumeLabel" xml:space="preserve">
+    <value>Etiqueta de volumen</value>
   </data>
 </root>

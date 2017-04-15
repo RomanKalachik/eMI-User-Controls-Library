@@ -24,6 +24,8 @@
     <Compile Include="..\Solution Items\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Classes\FileSystemBrowserWindow\Methods\FileSystemListView_MouseDoubleClick.cs" />
+    <Compile Include="Classes\FileSystemBrowserWindow\Methods\FileSystemListView_SelectionChanged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -37,21 +39,15 @@
     </Compile>
     <Compile Include="Classes\FileSystemBrowserWindow\Enumerations\FileSystemItemType.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Classes\ByteConverter.cs" />
-    <Compile Include="Classes\FileSystemBrowserWindow\Classes\ComputerItem.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Classes\FileSystemItem.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Classes\PathButton.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\FileSystemBrowserWindow.xaml.cs">
       <DependentUpon>FileSystemBrowserWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\FileSystemBrowserWindow\Methods\ActionButton_Click.cs" />
-    <Compile Include="Classes\FileSystemBrowserWindow\Methods\ComputerListView_MouseDoubleClick.cs" />
-    <Compile Include="Classes\FileSystemBrowserWindow\Methods\ComputerListView_SelectionChanged.cs" />
-    <Compile Include="Classes\FileSystemBrowserWindow\Methods\FileSystemListView_MouseDoubleClick.cs" />
-    <Compile Include="Classes\FileSystemBrowserWindow\Methods\FileSystemListView_SelectionChanged.cs" />
-    <Compile Include="Classes\FileSystemBrowserWindow\Methods\GeneratePath.cs" />
-    <Compile Include="Classes\FileSystemBrowserWindow\Methods\ListComputer.cs" />
-    <Compile Include="Classes\FileSystemBrowserWindow\Methods\ListFileSystem.cs" />
-    <Compile Include="Classes\FileSystemBrowserWindow\Methods\Navigate.cs" />
+    <Compile Include="Classes\FileSystemBrowserWindow\Methods\GeneratePathButtons.cs" />
+    <Compile Include="Classes\FileSystemBrowserWindow\Methods\ListFileSystemItems.cs" />
+    <Compile Include="Classes\FileSystemBrowserWindow\Methods\NavigateFileSystem.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Methods\PathButton_Click.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Properties\SelectedDirectories.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Properties\SelectedFiles.cs" />
@@ -60,11 +56,6 @@
     <Compile Include="Resources\Buttons.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Buttons.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Resources\ComputerGridViewColumns.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ComputerGridViewColumns.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Resources\DriveTypeEnumerations.Designer.cs">
@@ -105,13 +96,6 @@
     <EmbeddedResource Include="Resources\Buttons.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Buttons.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ComputerGridViewColumns.en.resx" />
-    <EmbeddedResource Include="Resources\ComputerGridViewColumns.es.resx" />
-    <EmbeddedResource Include="Resources\ComputerGridViewColumns.is.resx" />
-    <EmbeddedResource Include="Resources\ComputerGridViewColumns.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ComputerGridViewColumns.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\DriveTypeEnumerations.en.resx" />
     <EmbeddedResource Include="Resources\DriveTypeEnumerations.es.resx" />

@@ -37,9 +37,13 @@ namespace Emi.UserControls
 
             FileSystemItem senderFileSystemItem = (FileSystemItem)senderListViewItem.Content;
 
-            if (senderFileSystemItem != null)
+            if (this.browserSettings.Path.Length == 0)
             {
-                bool canNavigate = false;
+                this.NavigateFileSystem(senderFileSystemItem.Name);
+            }
+            else
+            {
+                bool canNavigateFileSystem = false;
 
                 try
                 {
@@ -47,16 +51,16 @@ namespace Emi.UserControls
 
                     if ((senderFileAttributes & FileAttributes.Directory) == FileAttributes.Directory)
                     {
-                        canNavigate = true;
+                        canNavigateFileSystem = true;
                     }
                 }
                 catch
                 {
                 }
 
-                if (canNavigate)
+                if (canNavigateFileSystem)
                 {
-                    this.Navigate(this.browserSettings.Path + Path.DirectorySeparatorChar + senderFileSystemItem.Name);
+                    this.NavigateFileSystem(this.browserSettings.Path + Path.DirectorySeparatorChar + senderFileSystemItem.Name);
                 }
             }
         }

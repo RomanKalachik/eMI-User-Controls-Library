@@ -33,36 +33,29 @@ namespace Emi.UserControls
         /// <param name="e">The state information of the event handler.</param>
         private void ActionButton_Click(object sender, RoutedEventArgs e)
         {
-            if (this.fileSystemListView.Visibility == Visibility.Visible)
+            IList selectedItemsIList = this.fileSystemListView.SelectedItems;
+
+            foreach (object currentItem in selectedItemsIList)
             {
-                IList selectedItemsIList = this.fileSystemListView.SelectedItems;
+                FileSystemItem currentFileSystemItem = (FileSystemItem)currentItem;
 
-                foreach (object currentItem in selectedItemsIList)
+                switch (currentFileSystemItem.FileSystemItemType)
                 {
-                    FileSystemItem currentFileSystemItem = (FileSystemItem)currentItem;
-
-                    switch (currentFileSystemItem.FileSystemItemType)
-                    {
-                        case FileSystemItemType.Directory:
+                    case FileSystemItemType.Directory:
+                        if (string.IsNullOrEmpty(this.browserSettings.Path))
+                        {
+                            this.selectedDirectories.Add(currentFileSystemItem.Name);
+                        }
+                        else
+                        {
                             this.selectedDirectories.Add(this.browserSettings.Path + Path.DirectorySeparatorChar + currentFileSystemItem.Name);
+                        }
 
-                            break;
-                        case FileSystemItemType.File:
-                            this.selectedFiles.Add(this.browserSettings.Path + Path.DirectorySeparatorChar + currentFileSystemItem.Name);
+                        break;
+                    case FileSystemItemType.File:
+                        this.selectedFiles.Add(this.browserSettings.Path + Path.DirectorySeparatorChar + currentFileSystemItem.Name);
 
-                            break;
-                    }
-                }
-            }
-            else
-            {
-                IList selectedItemsIList = this.computerListView.SelectedItems;
-
-                foreach (object currentItem in selectedItemsIList)
-                {
-                    ComputerItem currentComputerItem = (ComputerItem)currentItem;
-
-                    this.selectedDirectories.Add(currentComputerItem.Name);
+                        break;
                 }
             }
 

@@ -1,5 +1,5 @@
 ﻿// <author>Stefán Örvar Sigmundsson</author>
-// <copyright company="eMedia Intellect℠" file="ComputerListView_SelectionChanged.cs">
+// <copyright company="eMedia Intellect℠" file="FileSystemBrowserWindow_IsVisibleChanged.cs">
 //    Copyright © 2016–2017 eMedia Intellect℠
 // </copyright>
 // <licence>
@@ -21,26 +21,18 @@
 
 namespace Emi.UserControls
 {
-    using System.Windows.Controls;
+    using System.Windows;
 
-    /// <content>Contains the <see cref="ComputerListView_SelectionChanged"/> method.</content>
+    /// <content>Contains the <see cref="FileSystemBrowserWindow_IsVisibleChanged"/> method.</content>
     public partial class FileSystemBrowserWindow
     {
-        /// <summary>Validates the selection when the selection is changed.</summary>
+        /// <summary>Navigates to the path in the file system when the window is shown.</summary>
+        /// <remarks>The <see cref="NavigateFileSystem"/> method can not be called before the window is shown.</remarks>
         /// <param name="sender">The sender object of the event handler.</param>
         /// <param name="e">The state information of the event handler.</param>
-        private void ComputerListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void FileSystemBrowserWindow_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            int selectedDrivesCount = this.computerListView.SelectedItems.Count;
-
-            if (selectedDrivesCount >= this.browserSettings.MinimumDirectories && selectedDrivesCount <= this.browserSettings.MaximumDirectories && 0 == this.browserSettings.MinimumFiles && 0 == this.browserSettings.MaximumFiles)
-            {
-                this.actionButton.IsEnabled = true;
-            }
-            else
-            {
-                this.actionButton.IsEnabled = false;
-            }
+            this.NavigateFileSystem(this.browserSettings.Path);
         }
     }
 }

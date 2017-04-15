@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AvailableFreeSpace" xml:space="preserve">
+    <value>Tiltækt laust pláss</value>
+  </data>
   <data name="CreationTime" xml:space="preserve">
     <value>Skapað</value>
+  </data>
+  <data name="DriveFormat" xml:space="preserve">
+    <value>Snið</value>
+  </data>
+  <data name="DriveType" xml:space="preserve">
+    <value>Tegund</value>
   </data>
   <data name="LastAccessTime" xml:space="preserve">
     <value>Breytt</value>
@@ -129,7 +138,19 @@
   <data name="Name" xml:space="preserve">
     <value>Nafn</value>
   </data>
+  <data name="RootDirectory" xml:space="preserve">
+    <value>Rótarskráasafn</value>
+  </data>
   <data name="Size" xml:space="preserve">
     <value>Stærð</value>
+  </data>
+  <data name="TotalFreeSpace" xml:space="preserve">
+    <value>Heildarpláss laust</value>
+  </data>
+  <data name="TotalSize" xml:space="preserve">
+    <value>Heildarstærð</value>
+  </data>
+  <data name="VolumeLabel" xml:space="preserve">
+    <value>Bindismerki</value>
   </data>
 </root>
