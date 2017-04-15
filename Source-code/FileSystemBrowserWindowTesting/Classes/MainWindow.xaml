@@ -2,61 +2,68 @@
     <Window.Resources>
         <ResourceDictionary Source="/Properties/TestingResourceDictionary.xaml"/>
     </Window.Resources>
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <StackPanel Margin="4, 0">
-            <GroupBox Header="BrowserSettings">
-                <StackPanel>
-                    <WrapPanel>
-                        <Label Content="Path:"/>
-                        <TextBox Name="pathTextBox" Width="150"/>
-                        <Label Content="Browsing mode:"/>
-                        <ComboBox Name="browsingModeComboBox"/>
-                        <Label Content="Byte multiple:"/>
-                        <ComboBox Name="byteMultipleComboBox"/>
-                    </WrapPanel>
-                    <WrapPanel>
-                        <Label Content="Minimum files:"/>
-                        <TextBox HorizontalContentAlignment="Right" Name="minimumFilesTextBox" Text="1" Width="30"/>
-                        <Label Content="Maximum files:"/>
-                        <TextBox HorizontalContentAlignment="Right" Name="maximumFilesTextBox" Text="1" Width="30"/>
-                        <Label Content="Minimum directories:"/>
-                        <TextBox HorizontalContentAlignment="Right" Name="minimumDirectoriesTextBox" Text="0" Width="30"/>
-                        <Label Content="Maximum directories:"/>
-                        <TextBox HorizontalContentAlignment="Right" Name="maximumDirectoriesTextBox" Text="0" Width="30"/>
-                    </WrapPanel>
-                    <WrapPanel>
-                        <CheckBox Content="HasAvailableFreeSpace" IsChecked="True" Name="hasAvailableFreeSpace"/>
-                        <CheckBox Content="HasDriveType" IsChecked="True" Name="hasDriveType"/>
-                        <CheckBox Content="HasDriveFormat" IsChecked="True" Name="hasDriveFormat"/>
-                        <CheckBox Content="HasRootDirectory" IsChecked="False" Name="hasRootDirectory"/>
-                        <CheckBox Content="HasTotalFreeSpace" IsChecked="True" Name="hasTotalFreeSpace"/>
-                        <CheckBox Content="HasTotalSize" IsChecked="True" Name="hasTotalSize"/>
-                        <CheckBox Content="HasVolumeLabel" IsChecked="False" Name="hasVolumeLabel"/>
-                    </WrapPanel>
-                </StackPanel>
-            </GroupBox>
-            <GroupBox Header="BrowserFilter">
+    <Grid Margin="4, 0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Column="0" Grid.Row="0" Header="BrowserSettings">
+            <StackPanel>
                 <WrapPanel>
-                    <Label Content="Filtering mode:"/>
-                    <ComboBox Name="filteringModeComboBox"/>
-                    <Label Content="Extensions:"/>
-                    <TextBox Text=";.ini;.lnk;.sys" Name="extensionsTextBox" Width="150"/>
+                    <Label Content="Path:"/>
+                    <TextBox Name="pathTextBox" Width="150"/>
+                    <Label Content="Browsing mode:"/>
+                    <ComboBox Name="browsingModeComboBox"/>
+                    <Label Content="Byte multiple:"/>
+                    <ComboBox Name="byteMultipleComboBox"/>
                 </WrapPanel>
-            </GroupBox>
-            <GroupBox Header="Result">
-                <ListView Name="resultListView">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="60"/>
-                            <GridViewColumn Header="Path" DisplayMemberBinding="{Binding Path}" Width="600"/>
-                        </GridView>
-                    </ListView.View>
-                </ListView>
-            </GroupBox>
+                <WrapPanel>
+                    <Label Content="Minimum files:"/>
+                    <TextBox HorizontalContentAlignment="Right" Name="minimumFilesTextBox" Text="1" Width="30"/>
+                    <Label Content="Maximum files:"/>
+                    <TextBox HorizontalContentAlignment="Right" Name="maximumFilesTextBox" Text="1" Width="30"/>
+                    <Label Content="Minimum directories:"/>
+                    <TextBox HorizontalContentAlignment="Right" Name="minimumDirectoriesTextBox" Text="0" Width="30"/>
+                    <Label Content="Maximum directories:"/>
+                    <TextBox HorizontalContentAlignment="Right" Name="maximumDirectoriesTextBox" Text="0" Width="30"/>
+                </WrapPanel>
+                <WrapPanel>
+                    <CheckBox Content="HasAvailableFreeSpace" IsChecked="True" Name="hasAvailableFreeSpace"/>
+                    <CheckBox Content="HasDriveType" IsChecked="True" Name="hasDriveType"/>
+                    <CheckBox Content="HasDriveFormat" IsChecked="True" Name="hasDriveFormat"/>
+                    <CheckBox Content="HasRootDirectory" IsChecked="False" Name="hasRootDirectory"/>
+                    <CheckBox Content="HasTotalFreeSpace" IsChecked="True" Name="hasTotalFreeSpace"/>
+                    <CheckBox Content="HasTotalSize" IsChecked="True" Name="hasTotalSize"/>
+                    <CheckBox Content="HasVolumeLabel" IsChecked="False" Name="hasVolumeLabel"/>
+                </WrapPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Column="0" Grid.Row="1" Header="BrowserFilter">
             <WrapPanel>
-                <Button Click="ShowDialogButton_Click" Content="Show Dialog"/>
-                <Button Click="ResetButton_Click" Content="Reset"/>
+                <Label Content="Filtering mode:"/>
+                <ComboBox Name="filteringModeComboBox"/>
+                <Label Content="Extensions:"/>
+                <TextBox Text=";.ini;.lnk;.sys" Name="extensionsTextBox" Width="150"/>
             </WrapPanel>
-        </StackPanel>
-    </ScrollViewer>
+        </GroupBox>
+        <GroupBox Grid.Column="0" Grid.Row="2" Header="Result">
+            <ListView Name="resultListView">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="60"/>
+                        <GridViewColumn Header="Path" DisplayMemberBinding="{Binding Path}" Width="600"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </GroupBox>
+        <WrapPanel Grid.Column="0" Grid.Row="3">
+            <Button Click="ShowDialogButton_Click" Content="Show Dialog"/>
+            <Button Click="ResetButton_Click" Content="Reset"/>
+        </WrapPanel>
+    </Grid>
 </Window>
