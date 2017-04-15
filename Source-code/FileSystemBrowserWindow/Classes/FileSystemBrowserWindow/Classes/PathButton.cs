@@ -30,7 +30,7 @@ namespace Emi.UserControls
         /// <summary>Provides path buttons for the <see cref="FileSystemBrowserWindow"/> class.</summary>
         internal class PathButton : Button
         {
-            /// <summary>The path to which to navigate.</summary>
+            /// <summary>The path to navigate to in the file system.</summary>
             private string path = string.Empty;
 
             /// <summary>Initialises a new instance of the <see cref="PathButton"/> class.</summary>
