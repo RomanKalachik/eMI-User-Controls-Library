@@ -48,12 +48,26 @@ namespace Emi.UserControls
                         }
                         else
                         {
-                            this.selectedDirectories.Add(this.browserSettings.Path + Path.DirectorySeparatorChar + currentFileSystemItem.Name);
+                            if (this.browserSettings.Path.EndsWith("\\", System.StringComparison.Ordinal))
+                            {
+                                this.selectedDirectories.Add(this.browserSettings.Path + currentFileSystemItem.Name);
+                            }
+                            else
+                            {
+                                this.selectedDirectories.Add(this.browserSettings.Path + Path.DirectorySeparatorChar + currentFileSystemItem.Name);
+                            }
                         }
 
                         break;
                     case FileSystemItemType.File:
-                        this.selectedFiles.Add(this.browserSettings.Path + Path.DirectorySeparatorChar + currentFileSystemItem.Name);
+                        if (this.browserSettings.Path.EndsWith("\\", System.StringComparison.Ordinal))
+                        {
+                            this.selectedFiles.Add(this.browserSettings.Path + currentFileSystemItem.Name);
+                        }
+                        else
+                        {
+                            this.selectedFiles.Add(this.browserSettings.Path + Path.DirectorySeparatorChar + currentFileSystemItem.Name);
+                        }
 
                         break;
                 }
