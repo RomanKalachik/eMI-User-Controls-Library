@@ -33,7 +33,7 @@ namespace Emi.UserControls
         {
             PathButton senderPathButton = (PathButton)sender;
 
-            this.Navigate(senderPathButton.Path);
+            this.NavigateFileSystem(senderPathButton.Path);
         }
     }
 }
