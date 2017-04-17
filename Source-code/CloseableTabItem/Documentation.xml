@@ -42,19 +42,6 @@
         <member name="M:Emi.UserControls.CloseableTabItem.#ctor">
             <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.CloseableTabItem"/> class.</summary>
         </member>
-        <member name="M:Emi.UserControls.CloseableTabItem.#ctor(System.Boolean)">
-            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.CloseableTabItem"/> class.</summary>
-            <param name="isCloseable">Indicates whether the tab item is closeable.</param>
-        </member>
-        <member name="M:Emi.UserControls.CloseableTabItem.#ctor(System.String)">
-            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.CloseableTabItem"/> class.</summary>
-            <param name="title">The title to display in the header of the tab item.</param>
-        </member>
-        <member name="M:Emi.UserControls.CloseableTabItem.#ctor(System.String,System.Boolean)">
-            <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.CloseableTabItem"/> class.</summary>
-            <param name="title">The title to display in the header of the tab item.</param>
-            <param name="isCloseable">Indicates whether the tab item is closeable.</param>
-        </member>
         <member name="M:Emi.UserControls.CloseableTabItem.CloseButton_Click(System.Object,System.Windows.RoutedEventArgs)">
             <summary>Removes the tab item from the tab control when the close button is clicked.</summary>
             <param name="sender">The sender object of the event handler.</param>

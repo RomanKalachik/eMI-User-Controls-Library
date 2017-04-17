@@ -33,7 +33,7 @@ namespace Emi.UserControls
         private bool isCloseable = true;
 
         /// <summary>The closeable header of the tab item.</summary>
-        private CloseableHeader closeableHeader = null;
+        private CloseableHeader closeableHeader = new CloseableHeader();
 
         /// <summary>The title to display in the header of the tab item.</summary>
         /// <remarks>The store for the <see cref="Title"/> property.</remarks>
@@ -41,35 +41,7 @@ namespace Emi.UserControls
 
         /// <summary>Initialises a new instance of the <see cref="CloseableTabItem"/> class.</summary>
         public CloseableTabItem()
-            : this(string.Empty, true)
         {
-        }
-
-        /// <summary>Initialises a new instance of the <see cref="CloseableTabItem"/> class.</summary>
-        /// <param name="isCloseable">Indicates whether the tab item is closeable.</param>
-        public CloseableTabItem(bool isCloseable)
-            : this(string.Empty, isCloseable)
-        {
-        }
-
-        /// <summary>Initialises a new instance of the <see cref="CloseableTabItem"/> class.</summary>
-        /// <param name="title">The title to display in the header of the tab item.</param>
-        public CloseableTabItem(string title)
-            : this(title, true)
-        {
-        }
-
-        /// <summary>Initialises a new instance of the <see cref="CloseableTabItem"/> class.</summary>
-        /// <param name="title">The title to display in the header of the tab item.</param>
-        /// <param name="isCloseable">Indicates whether the tab item is closeable.</param>
-        public CloseableTabItem(string title, bool isCloseable)
-        {
-            this.isCloseable = isCloseable;
-
-            this.title = title;
-
-            this.closeableHeader = new CloseableHeader();
-
             this.closeableHeader.titleLabel.Content = this.title;
 
             if (!this.IsSelected)
