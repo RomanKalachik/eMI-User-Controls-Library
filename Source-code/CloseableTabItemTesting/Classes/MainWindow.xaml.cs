@@ -37,12 +37,14 @@ namespace Emi.UserControls
         /// <param name="e">The state information of the event handler.</param>
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            CloseableTabItem newCloseableTabItem = new CloseableTabItem("TabItem");
+            CloseableTabItem newCloseableTabItem = new CloseableTabItem();
 
             if (!(bool)this.isCloseableCheckBox.IsChecked)
             {
                 newCloseableTabItem.IsCloseable = false;
             }
+
+            newCloseableTabItem.Title = "TabItem";
 
             this.tabControl.Items.Add(newCloseableTabItem);
         }
