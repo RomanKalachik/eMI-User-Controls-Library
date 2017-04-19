@@ -11,6 +11,7 @@
             <content>Contains the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.ByteConverter"/> class.</content>
             <content>Contains the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.FileSystemItem"/> class.</content>
             <content>Contains the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.PathButton"/> class.</content>
+            <content>Contains the <see cref="T:Emi.UserControls.FileSystemBrowserWindow.PathManipulator"/> class.</content>
             <summary>Provides a file system browser window.</summary>
             <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.ActionButton_Click(System.Object,System.Windows.RoutedEventArgs)"/> method.</content>
             <content>Contains the <see cref="M:Emi.UserControls.FileSystemBrowserWindow.GeneratePathButtons"/> method.</content>
@@ -191,6 +192,19 @@
             <summary>Gets a value indicating to which directory to navigate.</summary>
             <value>Represents the <see cref="F:Emi.UserControls.FileSystemBrowserWindow.PathButton.path"/> field.</value>
         </member>
+        <member name="T:Emi.UserControls.FileSystemBrowserWindow.PathManipulator">
+            <summary>Provides path manipulator for the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.PathManipulator.GetParentDirectory(System.String)">
+            <summary>Gets the parent directory of the file system path.</summary>
+            <param name="path">The file system path from which to start.</param>
+            <returns>The parent directory of the file system path.</returns>
+        </member>
+        <member name="M:Emi.UserControls.FileSystemBrowserWindow.PathManipulator.Sanitise(System.String)">
+            <summary>Sanitises a file system path.</summary>
+            <param name="path">The file system path to sanitise.</param>
+            <returns>The sanitised file system path.</returns>
+        </member>
         <member name="F:Emi.UserControls.FileSystemBrowserWindow.browserFilter">
             <summary>The file filter of the browser.</summary>
         </member>
@@ -268,9 +282,9 @@
             <remarks>If an exception is thrown during the tries then the file system navigation is redirected to the parent directory.</remarks>
         </member>
         <member name="M:Emi.UserControls.FileSystemBrowserWindow.NavigateFileSystem(System.String)">
-            <summary>Navigates to the specified path in the file system.</summary>
+            <summary>Navigates to the specified file system path.</summary>
             <remarks>If an exception is thrown during the try then the navigation is aborted.</remarks>
-            <param name="path">The path to which to navigate in the file system.</param>
+            <param name="path">The file system path to which to navigate.</param>
         </member>
         <member name="M:Emi.UserControls.FileSystemBrowserWindow.PathButton_Click(System.Object,System.Windows.RoutedEventArgs)">
             <summary>Browses to the directory when the button is clicked.</summary>

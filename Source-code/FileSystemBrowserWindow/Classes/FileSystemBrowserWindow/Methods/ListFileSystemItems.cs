@@ -196,11 +196,6 @@ namespace Emi.UserControls
                 fileSystemGridview.Columns.Insert(3, this.lastAccessTimeGridViewColumn);
                 fileSystemGridview.Columns.Insert(4, this.creationTimeGridViewColumn);
 
-                if (this.browserSettings.Path.EndsWith(":", StringComparison.Ordinal))
-                {
-                    this.browserSettings.Path += "\\";
-                }
-
                 DirectoryInfo listingDirectoryInfo = new DirectoryInfo(this.browserSettings.Path);
 
                 try
@@ -216,7 +211,7 @@ namespace Emi.UserControls
 
                     exceptionErrorWindow.ShowDialog();
 
-                    this.NavigateFileSystem(this.browserSettings.Path.Substring(0, this.browserSettings.Path.LastIndexOf('\\')));
+                    this.NavigateFileSystem(PathManipulator.GetParentDirectory(this.browserSettings.Path));
 
                     return;
                 }
@@ -226,7 +221,7 @@ namespace Emi.UserControls
 
                     exceptionErrorWindow.ShowDialog();
 
-                    this.NavigateFileSystem(this.browserSettings.Path.Substring(0, this.browserSettings.Path.LastIndexOf('\\')));
+                    this.NavigateFileSystem(PathManipulator.GetParentDirectory(this.browserSettings.Path));
 
                     return;
                 }
@@ -236,7 +231,7 @@ namespace Emi.UserControls
 
                     exceptionErrorWindow.ShowDialog();
 
-                    this.NavigateFileSystem(this.browserSettings.Path.Substring(0, this.browserSettings.Path.LastIndexOf('\\')));
+                    this.NavigateFileSystem(PathManipulator.GetParentDirectory(this.browserSettings.Path));
 
                     return;
                 }
@@ -257,7 +252,7 @@ namespace Emi.UserControls
 
                     exceptionErrorWindow.ShowDialog();
 
-                    this.NavigateFileSystem(this.browserSettings.Path.Substring(0, this.browserSettings.Path.LastIndexOf('\\')));
+                    this.NavigateFileSystem(PathManipulator.GetParentDirectory(this.browserSettings.Path));
 
                     return;
                 }

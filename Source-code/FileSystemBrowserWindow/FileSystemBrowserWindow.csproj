@@ -41,6 +41,7 @@
     <Compile Include="Classes\FileSystemBrowserWindow\Classes\ByteConverter.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Classes\FileSystemItem.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Classes\PathButton.cs" />
+    <Compile Include="Classes\FileSystemBrowserWindow\Classes\PathManipulator.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\FileSystemBrowserWindow.xaml.cs">
       <DependentUpon>FileSystemBrowserWindow.xaml</DependentUpon>
     </Compile>

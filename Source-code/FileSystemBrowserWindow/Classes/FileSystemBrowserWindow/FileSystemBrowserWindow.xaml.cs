@@ -94,7 +94,6 @@ namespace Emi.UserControls
         /// <summary>Initialises a new instance of the <see cref="FileSystemBrowserWindow"/> class.</summary>
         /// <param name="browserFilter">The file filter for the browser.</param>
         /// <param name="browserSettings">The settings for the browser.</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "The method is as complex as it must be.")]
         public FileSystemBrowserWindow(BrowserFilter browserFilter, BrowserSettings browserSettings)
         {
             this.browserFilter = browserFilter;
@@ -278,6 +277,8 @@ namespace Emi.UserControls
             /*
              * this.NavigateFileSystem
              */
+
+            this.browserSettings.Path = PathManipulator.Sanitise(this.browserSettings.Path);
 
             this.NavigateFileSystem(this.browserSettings.Path);
         }
