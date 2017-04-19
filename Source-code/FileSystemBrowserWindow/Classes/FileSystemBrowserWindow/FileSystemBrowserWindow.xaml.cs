@@ -30,6 +30,10 @@ namespace Emi.UserControls
     /// <summary>Provides a file system browser window.</summary>
     public partial class FileSystemBrowserWindow : Window
     {
+        /// <summary>Indicates whether navigation has been performed.</summary>
+        /// <remarks>Should an error occur during navigation the <see cref="ErrorWindow"/> is shown except on initial navigation.</remarks>
+        private bool isInitialNavigation = false;
+
         /// <summary>The file filter of the browser.</summary>
         private BrowserFilter browserFilter = null;
 
@@ -77,6 +81,9 @@ namespace Emi.UserControls
 
         /// <summary>The volume label column in the browser.</summary>
         private GridViewColumn volumeLabelGridViewColumn = new GridViewColumn();
+
+        /// <summary>The file system path of the browser.</summary>
+        private string path = string.Empty;
 
         /// <summary>Initialises a new instance of the <see cref="FileSystemBrowserWindow"/> class.</summary>
         public FileSystemBrowserWindow()
@@ -278,9 +285,9 @@ namespace Emi.UserControls
              * this.NavigateFileSystem
              */
 
-            this.browserSettings.Path = PathManipulator.Sanitise(this.browserSettings.Path);
+            this.path = PathManipulator.Sanitise(this.browserSettings.Path);
 
-            this.NavigateFileSystem(this.browserSettings.Path);
+            this.NavigateFileSystem(this.path);
         }
 
         /// <summary>Initialises a new instance of the <see cref="FileSystemBrowserWindow"/> class.</summary>

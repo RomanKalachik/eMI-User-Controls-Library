@@ -205,6 +205,10 @@
             <param name="path">The file system path to sanitise.</param>
             <returns>The sanitised file system path.</returns>
         </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.isInitialNavigation">
+            <summary>Indicates whether navigation has been performed.</summary>
+            <remarks>Should an error occur during navigation the <see cref="T:Emi.UserControls.ErrorWindow"/> is shown except on initial navigation.</remarks>
+        </member>
         <member name="F:Emi.UserControls.FileSystemBrowserWindow.browserFilter">
             <summary>The file filter of the browser.</summary>
         </member>
@@ -253,6 +257,9 @@
         <member name="F:Emi.UserControls.FileSystemBrowserWindow.volumeLabelGridViewColumn">
             <summary>The volume label column in the browser.</summary>
         </member>
+        <member name="F:Emi.UserControls.FileSystemBrowserWindow.path">
+            <summary>The file system path of the browser.</summary>
+        </member>
         <member name="M:Emi.UserControls.FileSystemBrowserWindow.#ctor">
             <summary>Initialises a new instance of the <see cref="T:Emi.UserControls.FileSystemBrowserWindow"/> class.</summary>
         </member>
@@ -284,7 +291,7 @@
         <member name="M:Emi.UserControls.FileSystemBrowserWindow.NavigateFileSystem(System.String)">
             <summary>Navigates to the specified file system path.</summary>
             <remarks>If an exception is thrown during the try then the navigation is aborted.</remarks>
-            <param name="path">The file system path to which to navigate.</param>
+            <param name="newPath">The file system path to which to navigate.</param>
         </member>
         <member name="M:Emi.UserControls.FileSystemBrowserWindow.PathButton_Click(System.Object,System.Windows.RoutedEventArgs)">
             <summary>Browses to the directory when the button is clicked.</summary>

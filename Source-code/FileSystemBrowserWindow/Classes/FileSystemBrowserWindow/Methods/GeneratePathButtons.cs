@@ -36,12 +36,12 @@ namespace Emi.UserControls
 
             this.pathStackPanel.Children.Add(computerPathButton);
 
-            if (this.browserSettings.Path.Length == 0)
+            if (this.path.Length == 0)
             {
                 return;
             }
 
-            string[] pathDirectories = this.browserSettings.Path.Split(Path.DirectorySeparatorChar);
+            string[] pathDirectories = this.path.Split(Path.DirectorySeparatorChar);
 
             string pathConcatenation = string.Empty;
 

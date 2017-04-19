@@ -30,19 +30,19 @@ namespace Emi.UserControls
     {
         /// <summary>Navigates to the specified file system path.</summary>
         /// <remarks>If an exception is thrown during the try then the navigation is aborted.</remarks>
-        /// <param name="path">The file system path to which to navigate.</param>
-        private void NavigateFileSystem(string path)
+        /// <param name="newPath">The file system path to which to navigate.</param>
+        private void NavigateFileSystem(string newPath)
         {
-            if (path.Length < 0)
+            if (newPath.Length < 0)
             {
                 try
                 {
-                    Directory.GetDirectories(path);
-                    Directory.GetFiles(path);
+                    Directory.GetDirectories(newPath);
+                    Directory.GetFiles(newPath);
                 }
                 catch (UnauthorizedAccessException)
                 {
-                    ErrorWindow exceptionErrorWindow = new ErrorWindow(this, path, UserControls.Resources.Exceptions.UnauthorizedAccessMessage);
+                    ErrorWindow exceptionErrorWindow = new ErrorWindow(this, newPath, UserControls.Resources.Exceptions.UnauthorizedAccessMessage);
 
                     exceptionErrorWindow.ShowDialog();
 
@@ -50,7 +50,7 @@ namespace Emi.UserControls
                 }
                 catch (PathTooLongException)
                 {
-                    ErrorWindow exceptionErrorWindow = new ErrorWindow(this, path, UserControls.Resources.Exceptions.PathTooLongMessage);
+                    ErrorWindow exceptionErrorWindow = new ErrorWindow(this, newPath, UserControls.Resources.Exceptions.PathTooLongMessage);
 
                     exceptionErrorWindow.ShowDialog();
 
@@ -58,7 +58,7 @@ namespace Emi.UserControls
                 }
                 catch (DirectoryNotFoundException)
                 {
-                    ErrorWindow exceptionErrorWindow = new ErrorWindow(this, path, UserControls.Resources.Exceptions.DirectoryNotFoundMessage);
+                    ErrorWindow exceptionErrorWindow = new ErrorWindow(this, newPath, UserControls.Resources.Exceptions.DirectoryNotFoundMessage);
 
                     exceptionErrorWindow.ShowDialog();
 
@@ -66,7 +66,7 @@ namespace Emi.UserControls
                 }
                 catch (IOException)
                 {
-                    ErrorWindow exceptionErrorWindow = new ErrorWindow(this, path, UserControls.Resources.Exceptions.IOMessage);
+                    ErrorWindow exceptionErrorWindow = new ErrorWindow(this, newPath, UserControls.Resources.Exceptions.IOMessage);
 
                     exceptionErrorWindow.ShowDialog();
 
@@ -74,7 +74,7 @@ namespace Emi.UserControls
                 }
                 catch (SecurityException)
                 {
-                    ErrorWindow exceptionErrorWindow = new ErrorWindow(this, path, UserControls.Resources.Exceptions.SecurityMessage);
+                    ErrorWindow exceptionErrorWindow = new ErrorWindow(this, newPath, UserControls.Resources.Exceptions.SecurityMessage);
 
                     exceptionErrorWindow.ShowDialog();
 
@@ -82,7 +82,7 @@ namespace Emi.UserControls
                 }
             }
 
-            this.browserSettings.Path = path;
+            this.path = newPath;
 
             this.GeneratePathButtons();
             this.ListFileSystemItems();

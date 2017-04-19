@@ -37,7 +37,7 @@ namespace Emi.UserControls
 
             FileSystemItem senderFileSystemItem = (FileSystemItem)senderListViewItem.Content;
 
-            if (this.browserSettings.Path.Length == 0)
+            if (this.path.Length == 0)
             {
                 this.NavigateFileSystem(senderFileSystemItem.Name);
             }
@@ -47,7 +47,7 @@ namespace Emi.UserControls
 
                 try
                 {
-                    FileAttributes senderFileAttributes = File.GetAttributes(this.browserSettings.Path + Path.DirectorySeparatorChar + senderFileSystemItem.Name);
+                    FileAttributes senderFileAttributes = File.GetAttributes(this.path + Path.DirectorySeparatorChar + senderFileSystemItem.Name);
 
                     if ((senderFileAttributes & FileAttributes.Directory) == FileAttributes.Directory)
                     {
@@ -60,7 +60,7 @@ namespace Emi.UserControls
 
                 if (canNavigateFileSystem)
                 {
-                    this.NavigateFileSystem(this.browserSettings.Path + Path.DirectorySeparatorChar + senderFileSystemItem.Name);
+                    this.NavigateFileSystem(this.path + Path.DirectorySeparatorChar + senderFileSystemItem.Name);
                 }
             }
         }

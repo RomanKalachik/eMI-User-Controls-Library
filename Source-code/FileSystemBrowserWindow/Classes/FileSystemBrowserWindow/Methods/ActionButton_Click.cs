@@ -42,31 +42,31 @@ namespace Emi.UserControls
                 switch (currentFileSystemItem.FileSystemItemType)
                 {
                     case FileSystemItemType.Directory:
-                        if (string.IsNullOrEmpty(this.browserSettings.Path))
+                        if (string.IsNullOrEmpty(this.path))
                         {
                             this.selectedDirectories.Add(currentFileSystemItem.Name);
                         }
                         else
                         {
-                            if (this.browserSettings.Path.EndsWith("\\", System.StringComparison.Ordinal))
+                            if (this.path.EndsWith("\\", System.StringComparison.Ordinal))
                             {
-                                this.selectedDirectories.Add(this.browserSettings.Path + currentFileSystemItem.Name);
+                                this.selectedDirectories.Add(this.path + currentFileSystemItem.Name);
                             }
                             else
                             {
-                                this.selectedDirectories.Add(this.browserSettings.Path + Path.DirectorySeparatorChar + currentFileSystemItem.Name);
+                                this.selectedDirectories.Add(this.path + Path.DirectorySeparatorChar + currentFileSystemItem.Name);
                             }
                         }
 
                         break;
                     case FileSystemItemType.File:
-                        if (this.browserSettings.Path.EndsWith("\\", System.StringComparison.Ordinal))
+                        if (this.path.EndsWith("\\", System.StringComparison.Ordinal))
                         {
-                            this.selectedFiles.Add(this.browserSettings.Path + currentFileSystemItem.Name);
+                            this.selectedFiles.Add(this.path + currentFileSystemItem.Name);
                         }
                         else
                         {
-                            this.selectedFiles.Add(this.browserSettings.Path + Path.DirectorySeparatorChar + currentFileSystemItem.Name);
+                            this.selectedFiles.Add(this.path + Path.DirectorySeparatorChar + currentFileSystemItem.Name);
                         }
 
                         break;

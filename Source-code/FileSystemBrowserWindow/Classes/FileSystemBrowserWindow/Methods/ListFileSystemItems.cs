@@ -39,7 +39,7 @@ namespace Emi.UserControls
 
             fileSystemGridview.Columns.Clear();
 
-            if (this.browserSettings.Path.Length == 0)
+            if (this.path.Length == 0)
             {
                 fileSystemGridview.Columns.Insert(0, this.nameGridViewColumn);
                 fileSystemGridview.Columns.Insert(1, this.volumeLabelGridViewColumn);
@@ -196,7 +196,7 @@ namespace Emi.UserControls
                 fileSystemGridview.Columns.Insert(3, this.lastAccessTimeGridViewColumn);
                 fileSystemGridview.Columns.Insert(4, this.creationTimeGridViewColumn);
 
-                DirectoryInfo listingDirectoryInfo = new DirectoryInfo(this.browserSettings.Path);
+                DirectoryInfo listingDirectoryInfo = new DirectoryInfo(this.path);
 
                 try
                 {
@@ -207,31 +207,64 @@ namespace Emi.UserControls
                 }
                 catch (DirectoryNotFoundException)
                 {
-                    ErrorWindow exceptionErrorWindow = new ErrorWindow(this, this.browserSettings.Path, UserControls.Resources.Exceptions.DirectoryNotFoundMessage);
+                    if (!this.isInitialNavigation)
+                    {
+                        this.isInitialNavigation = true;
 
-                    exceptionErrorWindow.ShowDialog();
+                        this.NavigateFileSystem(string.Empty);
 
-                    this.NavigateFileSystem(PathManipulator.GetParentDirectory(this.browserSettings.Path));
+                        return;
+                    }
+                    else
+                    {
+                        ErrorWindow exceptionErrorWindow = new ErrorWindow(this, this.path, UserControls.Resources.Exceptions.DirectoryNotFoundMessage);
+
+                        exceptionErrorWindow.ShowDialog();
+
+                        this.NavigateFileSystem(PathManipulator.GetParentDirectory(this.path));
+                    }
 
                     return;
                 }
                 catch (SecurityException)
                 {
-                    ErrorWindow exceptionErrorWindow = new ErrorWindow(this, this.browserSettings.Path, UserControls.Resources.Exceptions.SecurityMessage);
+                    if (!this.isInitialNavigation)
+                    {
+                        this.isInitialNavigation = true;
 
-                    exceptionErrorWindow.ShowDialog();
+                        this.NavigateFileSystem(string.Empty);
 
-                    this.NavigateFileSystem(PathManipulator.GetParentDirectory(this.browserSettings.Path));
+                        return;
+                    }
+                    else
+                    {
+                        ErrorWindow exceptionErrorWindow = new ErrorWindow(this, this.path, UserControls.Resources.Exceptions.SecurityMessage);
+
+                        exceptionErrorWindow.ShowDialog();
+
+                        this.NavigateFileSystem(PathManipulator.GetParentDirectory(this.path));
+                    }
 
                     return;
                 }
                 catch (UnauthorizedAccessException)
                 {
-                    ErrorWindow exceptionErrorWindow = new ErrorWindow(this, this.browserSettings.Path, UserControls.Resources.Exceptions.UnauthorizedAccessMessage);
+                    if (!this.isInitialNavigation)
+                    {
+                        this.isInitialNavigation = true;
 
-                    exceptionErrorWindow.ShowDialog();
+                        this.NavigateFileSystem(string.Empty);
 
-                    this.NavigateFileSystem(PathManipulator.GetParentDirectory(this.browserSettings.Path));
+                        return;
+                    }
+                    else
+                    {
+                        ErrorWindow exceptionErrorWindow = new ErrorWindow(this, this.path, UserControls.Resources.Exceptions.UnauthorizedAccessMessage);
+
+                        exceptionErrorWindow.ShowDialog();
+
+                        this.NavigateFileSystem(PathManipulator.GetParentDirectory(this.path));
+                    }
 
                     return;
                 }
@@ -248,11 +281,22 @@ namespace Emi.UserControls
                 }
                 catch (DirectoryNotFoundException)
                 {
-                    ErrorWindow exceptionErrorWindow = new ErrorWindow(this, this.browserSettings.Path, UserControls.Resources.Exceptions.DirectoryNotFoundMessage);
+                    if (!this.isInitialNavigation)
+                    {
+                        this.isInitialNavigation = true;
 
-                    exceptionErrorWindow.ShowDialog();
+                        this.NavigateFileSystem(string.Empty);
 
-                    this.NavigateFileSystem(PathManipulator.GetParentDirectory(this.browserSettings.Path));
+                        return;
+                    }
+                    else
+                    {
+                        ErrorWindow exceptionErrorWindow = new ErrorWindow(this, this.path, UserControls.Resources.Exceptions.DirectoryNotFoundMessage);
+
+                        exceptionErrorWindow.ShowDialog();
+
+                        this.NavigateFileSystem(PathManipulator.GetParentDirectory(this.path));
+                    }
 
                     return;
                 }
