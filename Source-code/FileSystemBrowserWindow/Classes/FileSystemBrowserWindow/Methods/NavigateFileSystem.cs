@@ -28,9 +28,9 @@ namespace Emi.UserControls
     /// <content>Contains the <see cref="NavigateFileSystem"/> method.</content>
     public partial class FileSystemBrowserWindow
     {
-        /// <summary>Navigates to the specified path in the file system.</summary>
+        /// <summary>Navigates to the specified file system path.</summary>
         /// <remarks>If an exception is thrown during the try then the navigation is aborted.</remarks>
-        /// <param name="path">The path to which to navigate in the file system.</param>
+        /// <param name="path">The file system path to which to navigate.</param>
         private void NavigateFileSystem(string path)
         {
             if (path.Length < 0)
