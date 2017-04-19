@@ -63,7 +63,6 @@ namespace Emi.UserControls
         /// <summary>Processes a file by filtering it in or out.</summary>
         /// <param name="fileSystemInfo">The file to process.</param>
         /// <returns>An indication of whether the file should be filtered in or out.</returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", Justification = "The spelling is correct.", MessageId = "FilteringMode")]
         public bool Process(FileSystemInfo fileSystemInfo)
         {
             if (fileSystemInfo == null)
