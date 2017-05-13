@@ -1,11 +1,11 @@
 ﻿<UserControl x:Class="Emi.UserControls.CloseableHeader" x:ClassModifier="internal" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <UserControl.Resources>
-        <ControlTemplate TargetType="Button" x:Key="ButtonTemplate">
+        <ControlTemplate TargetType="{x:Type Button}" x:Key="ButtonTemplate">
             <ContentPresenter Content="x"/>
         </ControlTemplate>
     </UserControl.Resources>
     <Grid>
-        <Label FontFamily="Courier" HorizontalAlignment="Left" Margin="0,1,0,0" Name="titleLabel" Padding="0"/>
+        <Label FontFamily="Courier" HorizontalAlignment="Left" Margin="0,1,0,0" Padding="0" x:Name="titleLabel"/>
         <Button FontFamily="Courier" FontSize="13" FontWeight="Bold" Foreground="#A7A5A5" HorizontalAlignment="Right" Margin="0,0,0,0" Name="closeButton" Template="{StaticResource ButtonTemplate}"/>
     </Grid>
 </UserControl>

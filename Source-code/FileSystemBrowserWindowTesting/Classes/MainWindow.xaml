@@ -26,33 +26,33 @@
                     <Label Content="Minimum files:"/>
                     <TextBox HorizontalContentAlignment="Right" Name="minimumFilesTextBox" Text="1" Width="30"/>
                     <Label Content="Maximum files:"/>
-                    <TextBox HorizontalContentAlignment="Right" Name="maximumFilesTextBox" Text="1" Width="30"/>
+                    <TextBox HorizontalContentAlignment="Right" Text="1" Width="30" x:Name="maximumFilesTextBox"/>
                     <Label Content="Minimum directories:"/>
-                    <TextBox HorizontalContentAlignment="Right" Name="minimumDirectoriesTextBox" Text="0" Width="30"/>
+                    <TextBox HorizontalContentAlignment="Right" Text="0" Width="30" x:Name="minimumDirectoriesTextBox"/>
                     <Label Content="Maximum directories:"/>
-                    <TextBox HorizontalContentAlignment="Right" Name="maximumDirectoriesTextBox" Text="0" Width="30"/>
+                    <TextBox HorizontalContentAlignment="Right" Text="0" Width="30" x:Name="maximumDirectoriesTextBox"/>
                 </WrapPanel>
                 <WrapPanel>
-                    <CheckBox Content="HasAvailableFreeSpace" IsChecked="True" Name="hasAvailableFreeSpace"/>
-                    <CheckBox Content="HasDriveType" IsChecked="True" Name="hasDriveType"/>
-                    <CheckBox Content="HasDriveFormat" IsChecked="True" Name="hasDriveFormat"/>
-                    <CheckBox Content="HasRootDirectory" IsChecked="False" Name="hasRootDirectory"/>
-                    <CheckBox Content="HasTotalFreeSpace" IsChecked="True" Name="hasTotalFreeSpace"/>
-                    <CheckBox Content="HasTotalSize" IsChecked="True" Name="hasTotalSize"/>
-                    <CheckBox Content="HasVolumeLabel" IsChecked="False" Name="hasVolumeLabel"/>
+                    <CheckBox Content="HasAvailableFreeSpace" IsChecked="True" x:Name="hasAvailableFreeSpace"/>
+                    <CheckBox Content="HasDriveType" IsChecked="True" x:Name="hasDriveType"/>
+                    <CheckBox Content="HasDriveFormat" IsChecked="True" x:Name="hasDriveFormat"/>
+                    <CheckBox Content="HasRootDirectory" IsChecked="False" x:Name="hasRootDirectory"/>
+                    <CheckBox Content="HasTotalFreeSpace" IsChecked="True" x:Name="hasTotalFreeSpace"/>
+                    <CheckBox Content="HasTotalSize" IsChecked="True" x:Name="hasTotalSize"/>
+                    <CheckBox Content="HasVolumeLabel" IsChecked="False" x:Name="hasVolumeLabel"/>
                 </WrapPanel>
             </StackPanel>
         </GroupBox>
         <GroupBox Grid.Column="0" Grid.Row="1" Header="BrowserFilter">
             <WrapPanel>
                 <Label Content="Filtering mode:"/>
-                <ComboBox Name="filteringModeComboBox"/>
+                <ComboBox x:Name="filteringModeComboBox"/>
                 <Label Content="Extensions:"/>
-                <TextBox Text=";.ini;.lnk;.sys" Name="extensionsTextBox" Width="150"/>
+                <TextBox Text=";.ini;.lnk;.sys" Width="150" x:Name="extensionsTextBox"/>
             </WrapPanel>
         </GroupBox>
         <GroupBox Grid.Column="0" Grid.Row="2" Header="Result">
-            <ListView Name="resultListView">
+            <ListView x:Name="resultListView">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="60"/>
