@@ -22,7 +22,7 @@ namespace Emi.UserControls.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class FileSystemGridViewColumns {
+    public class FileSystemGridViewColumns {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Emi.UserControls.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Emi.UserControls.Resources.FileSystemGridViewColumns", typeof(FileSystemGridViewColumns).Assembly);
@@ -51,7 +51,7 @@ namespace Emi.UserControls.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Emi.UserControls.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Available free space.
         /// </summary>
-        internal static string AvailableFreeSpace {
+        public static string AvailableFreeSpace {
             get {
                 return ResourceManager.GetString("AvailableFreeSpace", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Emi.UserControls.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Created.
         /// </summary>
-        internal static string CreationTime {
+        public static string CreationTime {
             get {
                 return ResourceManager.GetString("CreationTime", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Emi.UserControls.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Format.
         /// </summary>
-        internal static string DriveFormat {
+        public static string DriveFormat {
             get {
                 return ResourceManager.GetString("DriveFormat", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Emi.UserControls.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Type.
         /// </summary>
-        internal static string DriveType {
+        public static string DriveType {
             get {
                 return ResourceManager.GetString("DriveType", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Emi.UserControls.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Modified.
         /// </summary>
-        internal static string LastAccessTime {
+        public static string LastAccessTime {
             get {
                 return ResourceManager.GetString("LastAccessTime", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Emi.UserControls.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Accessed.
         /// </summary>
-        internal static string LastWriteTime {
+        public static string LastWriteTime {
             get {
                 return ResourceManager.GetString("LastWriteTime", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Emi.UserControls.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
-        internal static string Name {
+        public static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace Emi.UserControls.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Root directory.
         /// </summary>
-        internal static string RootDirectory {
+        public static string RootDirectory {
             get {
                 return ResourceManager.GetString("RootDirectory", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace Emi.UserControls.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Size.
         /// </summary>
-        internal static string Size {
+        public static string Size {
             get {
                 return ResourceManager.GetString("Size", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace Emi.UserControls.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Total free space.
         /// </summary>
-        internal static string TotalFreeSpace {
+        public static string TotalFreeSpace {
             get {
                 return ResourceManager.GetString("TotalFreeSpace", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace Emi.UserControls.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Total size.
         /// </summary>
-        internal static string TotalSize {
+        public static string TotalSize {
             get {
                 return ResourceManager.GetString("TotalSize", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace Emi.UserControls.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Volume label.
         /// </summary>
-        internal static string VolumeLabel {
+        public static string VolumeLabel {
             get {
                 return ResourceManager.GetString("VolumeLabel", resourceCulture);
             }
