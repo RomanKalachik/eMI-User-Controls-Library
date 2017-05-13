@@ -24,8 +24,6 @@ namespace Emi.UserControls
     using System;
     using System.Collections.ObjectModel;
     using System.Windows;
-    using System.Windows.Controls;
-    using System.Windows.Data;
 
     /// <summary>Provides a file system browser window.</summary>
     public partial class FileSystemBrowserWindow : Window
@@ -45,42 +43,6 @@ namespace Emi.UserControls
 
         /// <summary>The selected files in the browser.</summary>
         private Collection<string> selectedFiles = new Collection<string>();
-
-        /// <summary>The available free space column in the browser.</summary>
-        private GridViewColumn availableFreeSpaceGridViewColumn = new GridViewColumn();
-
-        /// <summary>The creation time column in the browser.</summary>
-        private GridViewColumn creationTimeGridViewColumn = new GridViewColumn();
-
-        /// <summary>The drive format column in the browser.</summary>
-        private GridViewColumn driveFormatGridViewColumn = new GridViewColumn();
-
-        /// <summary>The drive type column in the browser.</summary>
-        private GridViewColumn driveTypeGridViewColumn = new GridViewColumn();
-
-        /// <summary>The last access time column in the browser.</summary>
-        private GridViewColumn lastAccessTimeGridViewColumn = new GridViewColumn();
-
-        /// <summary>The last write time column in the browser.</summary>
-        private GridViewColumn lastWriteTimeGridViewColumn = new GridViewColumn();
-
-        /// <summary>The name column in the browser.</summary>
-        private GridViewColumn nameGridViewColumn = new GridViewColumn();
-
-        /// <summary>The root directory column in the browser.</summary>
-        private GridViewColumn rootDirectoryGridViewColumn = new GridViewColumn();
-
-        /// <summary>The size column in the browser.</summary>
-        private GridViewColumn sizeGridViewColumn = new GridViewColumn();
-
-        /// <summary>The total free space column in the browser.</summary>
-        private GridViewColumn totalFreeSpaceGridViewColumn = new GridViewColumn();
-
-        /// <summary>The total size column in the browser.</summary>
-        private GridViewColumn totalSizeGridViewColumn = new GridViewColumn();
-
-        /// <summary>The volume label column in the browser.</summary>
-        private GridViewColumn volumeLabelGridViewColumn = new GridViewColumn();
 
         /// <summary>The file system path of the browser.</summary>
         private string path = string.Empty;
@@ -218,50 +180,6 @@ namespace Emi.UserControls
             this.navigationStackPanel.Children.Add(musicNavigationButton);
             this.navigationStackPanel.Children.Add(picturesNavigationButton);
             this.navigationStackPanel.Children.Add(videosNavigationButton);
-
-            /*
-             * this.fileSystemGridView
-             */
-
-            GridView fileSystemGridView = new GridView();
-
-            this.nameGridViewColumn.DisplayMemberBinding = new Binding("Name");
-            this.nameGridViewColumn.Header = UserControls.Resources.FileSystemGridViewColumns.Name;
-
-            this.sizeGridViewColumn.DisplayMemberBinding = new Binding("Size");
-            this.sizeGridViewColumn.Header = UserControls.Resources.FileSystemGridViewColumns.Size;
-
-            this.lastWriteTimeGridViewColumn.DisplayMemberBinding = new Binding("LastWriteTime");
-            this.lastWriteTimeGridViewColumn.Header = UserControls.Resources.FileSystemGridViewColumns.LastWriteTime;
-
-            this.lastAccessTimeGridViewColumn.DisplayMemberBinding = new Binding("LastAccessTime");
-            this.lastAccessTimeGridViewColumn.Header = UserControls.Resources.FileSystemGridViewColumns.LastAccessTime;
-
-            this.creationTimeGridViewColumn.DisplayMemberBinding = new Binding("CreationTime");
-            this.creationTimeGridViewColumn.Header = UserControls.Resources.FileSystemGridViewColumns.CreationTime;
-
-            this.volumeLabelGridViewColumn.DisplayMemberBinding = new Binding("VolumeLabel");
-            this.volumeLabelGridViewColumn.Header = UserControls.Resources.FileSystemGridViewColumns.VolumeLabel;
-
-            this.rootDirectoryGridViewColumn.DisplayMemberBinding = new Binding("RootDirectory");
-            this.rootDirectoryGridViewColumn.Header = UserControls.Resources.FileSystemGridViewColumns.RootDirectory;
-
-            this.driveTypeGridViewColumn.DisplayMemberBinding = new Binding("DriveType");
-            this.driveTypeGridViewColumn.Header = UserControls.Resources.FileSystemGridViewColumns.DriveType;
-
-            this.driveFormatGridViewColumn.DisplayMemberBinding = new Binding("DriveFormat");
-            this.driveFormatGridViewColumn.Header = UserControls.Resources.FileSystemGridViewColumns.DriveFormat;
-
-            this.availableFreeSpaceGridViewColumn.DisplayMemberBinding = new Binding("AvailableFreeSpace");
-            this.availableFreeSpaceGridViewColumn.Header = UserControls.Resources.FileSystemGridViewColumns.AvailableFreeSpace;
-
-            this.totalFreeSpaceGridViewColumn.DisplayMemberBinding = new Binding("TotalFreeSpace");
-            this.totalFreeSpaceGridViewColumn.Header = UserControls.Resources.FileSystemGridViewColumns.TotalFreeSpace;
-
-            this.totalSizeGridViewColumn.DisplayMemberBinding = new Binding("TotalSize");
-            this.totalSizeGridViewColumn.Header = UserControls.Resources.FileSystemGridViewColumns.TotalSize;
-
-            this.fileSystemListView.View = fileSystemGridView;
 
             /*
              * this.actionButton, this.cancelButton
