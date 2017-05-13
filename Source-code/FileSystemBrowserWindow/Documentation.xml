@@ -221,42 +221,6 @@
         <member name="F:Emi.UserControls.FileSystemBrowserWindow.selectedFiles">
             <summary>The selected files in the browser.</summary>
         </member>
-        <member name="F:Emi.UserControls.FileSystemBrowserWindow.availableFreeSpaceGridViewColumn">
-            <summary>The available free space column in the browser.</summary>
-        </member>
-        <member name="F:Emi.UserControls.FileSystemBrowserWindow.creationTimeGridViewColumn">
-            <summary>The creation time column in the browser.</summary>
-        </member>
-        <member name="F:Emi.UserControls.FileSystemBrowserWindow.driveFormatGridViewColumn">
-            <summary>The drive format column in the browser.</summary>
-        </member>
-        <member name="F:Emi.UserControls.FileSystemBrowserWindow.driveTypeGridViewColumn">
-            <summary>The drive type column in the browser.</summary>
-        </member>
-        <member name="F:Emi.UserControls.FileSystemBrowserWindow.lastAccessTimeGridViewColumn">
-            <summary>The last access time column in the browser.</summary>
-        </member>
-        <member name="F:Emi.UserControls.FileSystemBrowserWindow.lastWriteTimeGridViewColumn">
-            <summary>The last write time column in the browser.</summary>
-        </member>
-        <member name="F:Emi.UserControls.FileSystemBrowserWindow.nameGridViewColumn">
-            <summary>The name column in the browser.</summary>
-        </member>
-        <member name="F:Emi.UserControls.FileSystemBrowserWindow.rootDirectoryGridViewColumn">
-            <summary>The root directory column in the browser.</summary>
-        </member>
-        <member name="F:Emi.UserControls.FileSystemBrowserWindow.sizeGridViewColumn">
-            <summary>The size column in the browser.</summary>
-        </member>
-        <member name="F:Emi.UserControls.FileSystemBrowserWindow.totalFreeSpaceGridViewColumn">
-            <summary>The total free space column in the browser.</summary>
-        </member>
-        <member name="F:Emi.UserControls.FileSystemBrowserWindow.totalSizeGridViewColumn">
-            <summary>The total size column in the browser.</summary>
-        </member>
-        <member name="F:Emi.UserControls.FileSystemBrowserWindow.volumeLabelGridViewColumn">
-            <summary>The volume label column in the browser.</summary>
-        </member>
         <member name="F:Emi.UserControls.FileSystemBrowserWindow.path">
             <summary>The file system path of the browser.</summary>
         </member>
