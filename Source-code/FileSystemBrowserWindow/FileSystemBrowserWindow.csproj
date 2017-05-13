@@ -118,7 +118,7 @@
     <EmbeddedResource Include="Resources\FileSystemGridViewColumns.es.resx" />
     <EmbeddedResource Include="Resources\FileSystemGridViewColumns.is.resx" />
     <EmbeddedResource Include="Resources\FileSystemGridViewColumns.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>FileSystemGridViewColumns.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\NavigationButtons.en.resx" />
