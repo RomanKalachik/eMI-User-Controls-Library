@@ -97,7 +97,7 @@ namespace Emi.UserControls.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modified.
+        ///   Looks up a localized string similar to Accessed.
         /// </summary>
         public static string LastAccessTime {
             get {
@@ -106,7 +106,7 @@ namespace Emi.UserControls.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Accessed.
+        ///   Looks up a localized string similar to Modified.
         /// </summary>
         public static string LastWriteTime {
             get {
