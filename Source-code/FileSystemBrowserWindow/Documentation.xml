@@ -647,12 +647,12 @@
         </member>
         <member name="P:Emi.UserControls.Resources.FileSystemGridViewColumns.LastAccessTime">
             <summary>
-              Looks up a localized string similar to Modified.
+              Looks up a localized string similar to Accessed.
             </summary>
         </member>
         <member name="P:Emi.UserControls.Resources.FileSystemGridViewColumns.LastWriteTime">
             <summary>
-              Looks up a localized string similar to Accessed.
+              Looks up a localized string similar to Modified.
             </summary>
         </member>
         <member name="P:Emi.UserControls.Resources.FileSystemGridViewColumns.Name">

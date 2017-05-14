@@ -130,10 +130,10 @@
     <value>Type</value>
   </data>
   <data name="LastAccessTime" xml:space="preserve">
-    <value>Modified</value>
+    <value>Accessed</value>
   </data>
   <data name="LastWriteTime" xml:space="preserve">
-    <value>Accessed</value>
+    <value>Modified</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
