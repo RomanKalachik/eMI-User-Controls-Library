@@ -89,8 +89,6 @@
       <DependentUpon>Titles.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Images\File.png" />
-    <EmbeddedResource Include="Images\Folder.png" />
     <EmbeddedResource Include="Resources\Buttons.en.resx" />
     <EmbeddedResource Include="Resources\Buttons.es.resx" />
     <EmbeddedResource Include="Resources\Buttons.is.resx" />
