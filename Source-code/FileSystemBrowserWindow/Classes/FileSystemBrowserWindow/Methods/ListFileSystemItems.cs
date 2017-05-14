@@ -33,22 +33,62 @@ namespace Emi.UserControls
         /// <remarks>If an exception is thrown during the tries then the file system navigation is redirected to the parent directory.</remarks>
         private void ListFileSystemItems()
         {
+            /*
+             * Remove all columns.
+             */
+
+            GridView fileSystemGridView = (GridView)this.fileSystemListView.View;
+
+            fileSystemGridView.Columns.Clear();
+
+            fileSystemGridView.Columns.Add(this.nameGridViewColumn);
+
+            /*
+             * Remove all items.
+             */
+
             this.fileSystemListView.Items.Clear();
 
-            GridView fileSystemGridview = (GridView)this.fileSystemListView.View;
-
-            fileSystemGridview.Columns.Clear();
+            /*
+             * Add relevant columns and items.
+             */
 
             if (this.path.Length == 0)
             {
-                fileSystemGridview.Columns.Insert(0, this.nameGridViewColumn);
-                fileSystemGridview.Columns.Insert(1, this.volumeLabelGridViewColumn);
-                fileSystemGridview.Columns.Insert(2, this.rootDirectoryGridViewColumn);
-                fileSystemGridview.Columns.Insert(3, this.driveTypeGridViewColumn);
-                fileSystemGridview.Columns.Insert(4, this.driveFormatGridViewColumn);
-                fileSystemGridview.Columns.Insert(5, this.availableFreeSpaceGridViewColumn);
-                fileSystemGridview.Columns.Insert(6, this.totalFreeSpaceGridViewColumn);
-                fileSystemGridview.Columns.Insert(7, this.totalSizeGridViewColumn);
+                if (this.browserSettings.HasVolumeLabel)
+                {
+                    fileSystemGridView.Columns.Add(this.volumeLabelGridViewColumn);
+                }
+
+                if (this.browserSettings.HasRootDirectory)
+                {
+                    fileSystemGridView.Columns.Add(this.rootDirectoryGridViewColumn);
+                }
+
+                if (this.browserSettings.HasDriveType)
+                {
+                    fileSystemGridView.Columns.Add(this.driveTypeGridViewColumn);
+                }
+
+                if (this.browserSettings.HasDriveFormat)
+                {
+                    fileSystemGridView.Columns.Add(this.driveFormatGridViewColumn);
+                }
+
+                if (this.browserSettings.HasAvailableFreeSpace)
+                {
+                    fileSystemGridView.Columns.Add(this.availableFreeSpaceGridViewColumn);
+                }
+
+                if (this.browserSettings.HasTotalFreeSpace)
+                {
+                    fileSystemGridView.Columns.Add(this.totalFreeSpaceGridViewColumn);
+                }
+
+                if (this.browserSettings.HasTotalSize)
+                {
+                    fileSystemGridView.Columns.Add(this.totalSizeGridViewColumn);
+                }
 
                 foreach (DriveInfo currentDriveInfo in DriveInfo.GetDrives())
                 {
@@ -66,20 +106,12 @@ namespace Emi.UserControls
                         {
                         }
                     }
-                    else
-                    {
-                        fileSystemGridview.Columns.Remove(this.volumeLabelGridViewColumn);
-                    }
 
                     if (this.browserSettings.HasRootDirectory)
                     {
                         DirectoryInfo currentDirectoryInfo = currentDriveInfo.RootDirectory;
 
                         currentFileSystemItem.RootDirectory = currentDirectoryInfo.Name;
-                    }
-                    else
-                    {
-                        fileSystemGridview.Columns.Remove(this.rootDirectoryGridViewColumn);
                     }
 
                     if (this.browserSettings.HasDriveType)
@@ -120,10 +152,6 @@ namespace Emi.UserControls
                                 break;
                         }
                     }
-                    else
-                    {
-                        fileSystemGridview.Columns.Remove(this.driveTypeGridViewColumn);
-                    }
 
                     if (this.browserSettings.HasDriveFormat)
                     {
@@ -134,10 +162,6 @@ namespace Emi.UserControls
                         catch
                         {
                         }
-                    }
-                    else
-                    {
-                        fileSystemGridview.Columns.Remove(this.driveFormatGridViewColumn);
                     }
 
                     if (this.browserSettings.HasAvailableFreeSpace)
@@ -150,10 +174,6 @@ namespace Emi.UserControls
                         {
                         }
                     }
-                    else
-                    {
-                        fileSystemGridview.Columns.Remove(this.availableFreeSpaceGridViewColumn);
-                    }
 
                     if (this.browserSettings.HasTotalFreeSpace)
                     {
@@ -164,10 +184,6 @@ namespace Emi.UserControls
                         catch
                         {
                         }
-                    }
-                    else
-                    {
-                        fileSystemGridview.Columns.Remove(this.totalFreeSpaceGridViewColumn);
                     }
 
                     if (this.browserSettings.HasTotalSize)
@@ -180,21 +196,16 @@ namespace Emi.UserControls
                         {
                         }
                     }
-                    else
-                    {
-                        fileSystemGridview.Columns.Remove(this.totalSizeGridViewColumn);
-                    }
 
                     this.fileSystemListView.Items.Add(currentFileSystemItem);
                 }
             }
             else
             {
-                fileSystemGridview.Columns.Insert(0, this.nameGridViewColumn);
-                fileSystemGridview.Columns.Insert(1, this.sizeGridViewColumn);
-                fileSystemGridview.Columns.Insert(2, this.lastWriteTimeGridViewColumn);
-                fileSystemGridview.Columns.Insert(3, this.lastAccessTimeGridViewColumn);
-                fileSystemGridview.Columns.Insert(4, this.creationTimeGridViewColumn);
+                fileSystemGridView.Columns.Add(this.sizeGridViewColumn);
+                fileSystemGridView.Columns.Add(this.lastAccessTimeGridViewColumn);
+                fileSystemGridView.Columns.Add(this.lastWriteTimeGridViewColumn);
+                fileSystemGridView.Columns.Add(this.creationTimeGridViewColumn);
 
                 DirectoryInfo listingDirectoryInfo = new DirectoryInfo(this.path);
 
@@ -301,6 +312,24 @@ namespace Emi.UserControls
                     return;
                 }
             }
+
+            /*
+             * Resize the columns to fit the data.
+             */
+
+            foreach (GridViewColumn column in fileSystemGridView.Columns)
+            {
+                if (double.IsNaN(column.Width))
+                {
+                    column.Width = column.ActualWidth;
+                }
+                
+                column.Width = double.NaN;
+            }
+
+            /*
+             * Scroll to the top of the list view.
+             */
 
             if (this.fileSystemListView.HasItems)
             {

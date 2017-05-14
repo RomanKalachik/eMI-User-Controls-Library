@@ -24,6 +24,7 @@ namespace Emi.UserControls
     using System;
     using System.Collections.ObjectModel;
     using System.Windows;
+    using System.Windows.Controls;
 
     /// <summary>Provides a file system browser window.</summary>
     public partial class FileSystemBrowserWindow : Window
@@ -43,6 +44,42 @@ namespace Emi.UserControls
 
         /// <summary>The selected files in the browser.</summary>
         private Collection<string> selectedFiles = new Collection<string>();
+
+        /// <summary>The name column in the browser.</summary>
+        private GridViewColumn nameGridViewColumn = null;
+
+        /// <summary>The size column in the browser.</summary>
+        private GridViewColumn sizeGridViewColumn = null;
+
+        /// <summary>The last access time column in the browser.</summary>
+        private GridViewColumn lastAccessTimeGridViewColumn = null;
+
+        /// <summary>The last write time column in the browser.</summary>
+        private GridViewColumn lastWriteTimeGridViewColumn = null;
+
+        /// <summary>The creation time column in the browser.</summary>
+        private GridViewColumn creationTimeGridViewColumn = null;
+
+        /// <summary>The volume label column in the browser.</summary>
+        private GridViewColumn volumeLabelGridViewColumn = null;
+
+        /// <summary>The root directory column in the browser.</summary>
+        private GridViewColumn rootDirectoryGridViewColumn = null;
+
+        /// <summary>The drive type column in the browser.</summary>
+        private GridViewColumn driveTypeGridViewColumn = null;
+
+        /// <summary>The drive format column in the browser.</summary>
+        private GridViewColumn driveFormatGridViewColumn = null;
+
+        /// <summary>The available free space column in the browser.</summary>
+        private GridViewColumn availableFreeSpaceGridViewColumn = null;
+
+        /// <summary>The total free space column in the browser.</summary>
+        private GridViewColumn totalFreeSpaceGridViewColumn = null;
+
+        /// <summary>The total size column in the browser.</summary>
+        private GridViewColumn totalSizeGridViewColumn = null;
 
         /// <summary>The file system path of the browser.</summary>
         private string path = string.Empty;
@@ -84,6 +121,25 @@ namespace Emi.UserControls
             }
 
             this.InitializeComponent();
+
+            /*
+             * Get grid view column references.
+             */
+
+            GridView fileSystemGridView = (GridView)this.fileSystemListView.View;
+
+            this.nameGridViewColumn = fileSystemGridView.Columns[0];
+            this.sizeGridViewColumn = fileSystemGridView.Columns[1];
+            this.lastAccessTimeGridViewColumn = fileSystemGridView.Columns[2];
+            this.lastWriteTimeGridViewColumn = fileSystemGridView.Columns[3];
+            this.creationTimeGridViewColumn = fileSystemGridView.Columns[4];
+            this.volumeLabelGridViewColumn = fileSystemGridView.Columns[5];
+            this.rootDirectoryGridViewColumn = fileSystemGridView.Columns[6];
+            this.driveTypeGridViewColumn = fileSystemGridView.Columns[7];
+            this.driveFormatGridViewColumn = fileSystemGridView.Columns[8];
+            this.availableFreeSpaceGridViewColumn = fileSystemGridView.Columns[9];
+            this.totalFreeSpaceGridViewColumn = fileSystemGridView.Columns[10];
+            this.totalSizeGridViewColumn = fileSystemGridView.Columns[11];
 
             /*
              * this.Title
