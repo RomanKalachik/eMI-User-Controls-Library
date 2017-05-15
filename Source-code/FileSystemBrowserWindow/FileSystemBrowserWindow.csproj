@@ -24,28 +24,25 @@
     <Compile Include="..\Solution Items\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Classes\FileSystemBrowserWindow\Methods\FileSystemListView_MouseDoubleClick.cs" />
-    <Compile Include="Classes\FileSystemBrowserWindow\Methods\FileSystemListView_SelectionChanged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enumerations\BrowsingMode.cs" />
-    <Compile Include="Enumerations\ByteMultiple.cs" />
-    <Compile Include="Enumerations\FilteringMode.cs" />
     <Compile Include="Classes\BrowserFilter.cs" />
     <Compile Include="Classes\BrowserSettings.cs" />
     <Compile Include="Classes\ErrorWindow.xaml.cs">
       <DependentUpon>ErrorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\FileSystemBrowserWindow\Enumerations\FileSystemItemType.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Classes\ByteConverter.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Classes\FileSystemItem.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Classes\PathButton.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Classes\PathManipulator.cs" />
+    <Compile Include="Classes\FileSystemBrowserWindow\Enumerations\FileSystemItemType.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\FileSystemBrowserWindow.xaml.cs">
       <DependentUpon>FileSystemBrowserWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\FileSystemBrowserWindow\Methods\ActionButton_Click.cs" />
+    <Compile Include="Classes\FileSystemBrowserWindow\Methods\FileSystemListView_MouseDoubleClick.cs" />
+    <Compile Include="Classes\FileSystemBrowserWindow\Methods\FileSystemListView_SelectionChanged.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Methods\GeneratePathButtons.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Methods\ListFileSystemItems.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Methods\NavigateFileSystem.cs" />
@@ -53,6 +50,9 @@
     <Compile Include="Classes\FileSystemBrowserWindow\Properties\SelectedDirectories.cs" />
     <Compile Include="Classes\FileSystemBrowserWindow\Properties\SelectedFiles.cs" />
     <Compile Include="Classes\MinimumGreaterThanMaximumException.cs" />
+    <Compile Include="Enumerations\BrowsingMode.cs" />
+    <Compile Include="Enumerations\ByteMultiple.cs" />
+    <Compile Include="Enumerations\FilteringMode.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Resources\Buttons.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -150,6 +150,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Resource Include="Images\Directory.png" />
+    <Resource Include="Images\File.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -202,6 +202,25 @@ namespace Emi.UserControls
                 get; set;
             }
 
+            /// <summary>Gets a value indicating the path to the icon representing the file system item.</summary>
+            public string Icon
+            {
+                get
+                {
+                    switch (this.fileSystemItemType)
+                    {
+                        case FileSystemItemType.Directory:
+                            return @"..\..\Images\Directory.png";
+
+                        case FileSystemItemType.File:
+                            return @"..\..\Images\File.png";
+
+                        default:
+                            return string.Empty;
+                    }
+                }
+            }
+
             /// <summary>Gets a value indicating the last access to the file system item.</summary>
             /// <value>Represents the <see cref="lastAccessTime"/> field after being converted to a string.</value>
             public string LastAccessTime
