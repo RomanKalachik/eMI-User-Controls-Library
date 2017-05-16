@@ -22,3 +22,6 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Microsoft.Design", "CA2210:AssembliesShouldHaveValidStrongNames", Justification = "Assembly signing is not required.")]
+[assembly: SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", Justification = "No localisation required.", MessageId = "System.Windows.Controls.TextBox.set_Text(System.String)", Scope = "member", Target = "Emi.UserControls.MainWindow.#ResetButton_Click(System.Object,System.Windows.RoutedEventArgs)")]
+[assembly: SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", Justification = "The spelling is correct.", MessageId = "ini", Scope = "member", Target = "Emi.UserControls.MainWindow.#ResetButton_Click(System.Object,System.Windows.RoutedEventArgs)")]
+[assembly: SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", Justification = "The spelling is correct.", MessageId = "lnk", Scope = "member", Target = "Emi.UserControls.MainWindow.#ResetButton_Click(System.Object,System.Windows.RoutedEventArgs)")]

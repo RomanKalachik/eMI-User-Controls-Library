@@ -28,7 +28,7 @@ namespace Emi.UserControls
     {
         /// <summary>Indicates whether the computer list view has a column for the available free space.</summary>
         /// <remarks>The store for the <see cref="HasAvailableFreeSpace"/> property.</remarks>
-        private bool hasAvailableFreeSpace = true;
+        private bool hasAvailableFreeSpace = false;
 
         /// <summary>Indicates whether the computer list view has a column for the drive type.</summary>
         /// <remarks>The store for the <see cref="HasDriveType"/> property.</remarks>

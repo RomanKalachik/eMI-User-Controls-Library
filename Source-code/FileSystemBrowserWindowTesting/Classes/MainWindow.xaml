@@ -33,7 +33,7 @@
                     <TextBox HorizontalContentAlignment="Right" Text="0" Width="30" x:Name="maximumDirectoriesTextBox"/>
                 </WrapPanel>
                 <WrapPanel>
-                    <CheckBox Content="HasAvailableFreeSpace" IsChecked="True" x:Name="hasAvailableFreeSpace"/>
+                    <CheckBox Content="HasAvailableFreeSpace" IsChecked="False" x:Name="hasAvailableFreeSpace"/>
                     <CheckBox Content="HasDriveType" IsChecked="True" x:Name="hasDriveType"/>
                     <CheckBox Content="HasDriveFormat" IsChecked="True" x:Name="hasDriveFormat"/>
                     <CheckBox Content="HasRootDirectory" IsChecked="False" x:Name="hasRootDirectory"/>

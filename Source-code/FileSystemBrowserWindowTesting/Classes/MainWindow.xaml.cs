@@ -59,9 +59,6 @@ namespace Emi.UserControls
         /// <summary>Resets all controls to their default state when the button is clicked.</summary>
         /// <param name="sender">The sender object of the event handler.</param>
         /// <param name="e">The state information of the event handler.</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", Justification = "No localisation required.", MessageId = "System.Windows.Controls.TextBox.set_Text(System.String)")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", Justification = "The spelling is correct.", MessageId = "lnk")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", Justification = "The spelling is correct.", MessageId = "ini")]
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
             this.pathTextBox.Text = string.Empty;
@@ -71,7 +68,7 @@ namespace Emi.UserControls
             this.maximumFilesTextBox.Text = "1";
             this.minimumDirectoriesTextBox.Text = "0";
             this.maximumDirectoriesTextBox.Text = "0";
-            this.hasAvailableFreeSpace.IsChecked = true;
+            this.hasAvailableFreeSpace.IsChecked = false;
             this.hasDriveFormat.IsChecked = true;
             this.hasDriveType.IsChecked = true;
             this.hasRootDirectory.IsChecked = false;
