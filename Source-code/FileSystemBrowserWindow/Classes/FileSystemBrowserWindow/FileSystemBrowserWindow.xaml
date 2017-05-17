@@ -48,7 +48,7 @@
                     <GridViewColumn Header="{x:Static resource:FileSystemGridViewColumns.Size}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Label Content="{Binding Size}" HorizontalContentAlignment="Right"/>
+                                <Label Content="{Binding Size}" HorizontalContentAlignment="Right" MinWidth="40"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
