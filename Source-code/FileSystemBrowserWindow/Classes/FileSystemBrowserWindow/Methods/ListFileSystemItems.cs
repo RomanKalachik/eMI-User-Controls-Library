@@ -47,7 +47,7 @@ namespace Emi.UserControls
              * Remove all items.
              */
 
-            this.fileSystemListView.Items.Clear();
+            this.fileSystemListViewItems.Clear();
 
             /*
              * Add relevant columns and items.
@@ -197,7 +197,7 @@ namespace Emi.UserControls
                         }
                     }
 
-                    this.fileSystemListView.Items.Add(currentFileSystemItem);
+                    this.fileSystemListViewItems.Add(currentFileSystemItem);
                 }
             }
             else
@@ -213,7 +213,7 @@ namespace Emi.UserControls
                 {
                     foreach (DirectoryInfo currentDirectoryInfo in listingDirectoryInfo.GetDirectories())
                     {
-                        this.fileSystemListView.Items.Add(new FileSystemItem() { ByteMultiple = this.browserSettings.ByteMultiple, FileSystemItemType = FileSystemItemType.Directory, Name = currentDirectoryInfo.Name, Accessed = currentDirectoryInfo.LastAccessTime, Written = currentDirectoryInfo.LastWriteTime, Created = currentDirectoryInfo.CreationTime });
+                        this.fileSystemListViewItems.Add(new FileSystemItem() { ByteMultiple = this.browserSettings.ByteMultiple, FileSystemItemType = FileSystemItemType.Directory, Name = currentDirectoryInfo.Name, Accessed = currentDirectoryInfo.LastAccessTime, Written = currentDirectoryInfo.LastWriteTime, Created = currentDirectoryInfo.CreationTime });
                     }
                 }
                 catch (DirectoryNotFoundException)
@@ -286,7 +286,7 @@ namespace Emi.UserControls
                     {
                         if (this.browserFilter.Process(currentFileInfo))
                         {
-                            this.fileSystemListView.Items.Add(new FileSystemItem() { ByteMultiple = this.browserSettings.ByteMultiple, FileSystemItemType = FileSystemItemType.File, Name = currentFileInfo.Name, Length = currentFileInfo.Length, Accessed = currentFileInfo.LastAccessTime, Written = currentFileInfo.LastWriteTime, Created = currentFileInfo.CreationTime });
+                            this.fileSystemListViewItems.Add(new FileSystemItem() { ByteMultiple = this.browserSettings.ByteMultiple, FileSystemItemType = FileSystemItemType.File, Name = currentFileInfo.Name, Length = currentFileInfo.Length, Accessed = currentFileInfo.LastAccessTime, Written = currentFileInfo.LastWriteTime, Created = currentFileInfo.CreationTime });
                         }
                     }
                 }
