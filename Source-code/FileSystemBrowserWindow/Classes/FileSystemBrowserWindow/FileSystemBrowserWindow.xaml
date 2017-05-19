@@ -75,7 +75,7 @@
             SelectionChanged="FileSystemListView_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="{x:Static resource:FileSystemGridViewColumns.Name}">
+                    <GridViewColumn Header="{x:Static resource:FileSystemGridViewColumns.Name}" DisplayMemberBinding="{Binding Name}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -86,7 +86,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="{x:Static resource:FileSystemGridViewColumns.Size}">
+                    <GridViewColumn Header="{x:Static resource:FileSystemGridViewColumns.Size}" DisplayMemberBinding="{Binding Size}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Label MinWidth="40"

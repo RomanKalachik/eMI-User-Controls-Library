@@ -129,13 +129,17 @@ namespace Emi.UserControls {
             fileSystemListViewItems = new ObservableCollection<FileSystemItem>();
             CollectionView = CollectionViewSource.GetDefaultView(fileSystemListViewItems);
             fileSystemListView.ItemsSource = CollectionView;
+
             /*
              * Get grid view column references.
              */
 
             GridView fileSystemGridView = (GridView)fileSystemListView.View;
-
             nameGridViewColumn = fileSystemGridView.Columns[0];
+            UpdateSortDescriptions("Name", ListSortDirection.Ascending);
+            nameGridViewColumn.HeaderTemplate = (DataTemplate)Resources["HeaderTemplateArrowUp"];
+
+
             sizeGridViewColumn = fileSystemGridView.Columns[1];
             lastAccessTimeGridViewColumn = fileSystemGridView.Columns[2];
             lastWriteTimeGridViewColumn = fileSystemGridView.Columns[3];
@@ -243,27 +247,32 @@ namespace Emi.UserControls {
             string colName = bind?.Path?.Path;
             if(string.IsNullOrEmpty(colName))
                 return;
+            UpdateSorting(gvch, colName);
+
+        }
+
+        private void UpdateSorting(GridViewColumnHeader gvch, string colName) {
             if(gvch != null)
                 if(gvch.Tag == null) {
                     gvch.Tag = ListSortDirection.Ascending;
-                    gvch.Column.HeaderTemplate = (DataTemplate)Resources["HeaderTemplateArrowUp"];
                     UpdateSortDescriptions(colName, ListSortDirection.Ascending);
+                    gvch.Column.HeaderTemplate = (DataTemplate)Resources["HeaderTemplateArrowUp"];
                 } else
                     if((ListSortDirection)gvch.Tag == ListSortDirection.Ascending) {
                     gvch.Tag = ListSortDirection.Descending;
-                    gvch.Column.HeaderTemplate = (DataTemplate)Resources["HeaderTemplateArrowDown"];
                     UpdateSortDescriptions(colName, ListSortDirection.Descending);
+                    gvch.Column.HeaderTemplate = (DataTemplate)Resources["HeaderTemplateArrowDown"];
                 } else {
-                    gvch.Tag = null;
-                    gvch.Column.HeaderTemplate = null;
-                    UpdateSortDescriptions(colName, null);
-
+                    gvch.Tag = ListSortDirection.Ascending;
+                    UpdateSortDescriptions(colName, ListSortDirection.Ascending);
+                    gvch.Column.HeaderTemplate = (DataTemplate)Resources["HeaderTemplateArrowUp"];
                 }
-
         }
 
         protected void UpdateSortDescriptions(string colName, ListSortDirection? dir) {
             CollectionView.SortDescriptions.Clear();
+            foreach(var col in ((GridView)fileSystemListView.View).Columns)
+                col.HeaderTemplate = null;
             if(dir.HasValue)
                 CollectionView.SortDescriptions.Add(new SortDescription(colName, dir.Value));
 
